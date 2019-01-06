@@ -1,16 +1,19 @@
 # Sql statement
 
-> select into ╧╝
-гя евюл╨М©║╪╜ ╩У╥н©Н евюл╨М╥н а╓╨╦╦╕ ╟║©╘©ц ╤╖ ╩Г©К.
+**select into К╛╦**
 
-> update
+М∙° М┘▄Л²╢К╦■Л≈░Л└° Л┐┬К║°Л ╢ М┘▄Л²╢К╦■К║° Л═∙КЁ╢К╔╪ Й╟─Л≈╛Л≤╛ К∙▄ Л┌╛Л ╘.
+
+**update**
+```
 update table_name
 set col1=val1, col2=val2, ...
 where condition;
+```
 
-
-> ||
-╧╝юзгуд║╠Б
+**||   К╛╦Л·░М∙╘Л╧≤Й╦╟**
+```
 select 1||2 from dual;
 --> 12
-select '1'||'2' from dual; ©м ╟╟ю╨ ╟А╟З╦╕ Ё©. 
+select '1'||'2' from dual; Л≥─ Й╟≥Л²─ Й╡╟ЙЁ╪К╔╪ К┐└. 
+```
