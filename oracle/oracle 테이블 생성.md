@@ -1,6 +1,6 @@
-# Å×ÀÌºí »ý¼º
+# í…Œì´ë¸” ìƒì„±
 
-> table »ý¼º
+> table ìƒì„±
 
 create table table_name(
 
@@ -11,6 +11,6 @@ create table table_name(
 );
 
 
-> table »èÁ¦
+> table ì‚­ì œ
 
 drop table table_name;  
