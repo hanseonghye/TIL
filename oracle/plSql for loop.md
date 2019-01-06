@@ -1,14 +1,15 @@
 # for loop
 
+```
 for i in 0..100 loop
 
 	처리문;
 
 end loop;
-
+```
 
 > 예시
-
+```
 set serveroutput on;
 
 
@@ -25,3 +26,4 @@ begin
 	end loop;
 
 end; 
+```
