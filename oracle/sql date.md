@@ -1,23 +1,23 @@
-# ³¯Â¥Çü DATA Type
+# ë‚ ì§œí˜• DATA Type
 
-> date --> DATE
+**date --> DATE**
 
-±â¿øÀü 4712³â ºÎÅÍ 9999³â±îÁöÀÇ ¿¬,¿ù,ÀÏ,½Ã,ºĞ,ÃÊÀÇ ÀÚ·á¸¦ ÀúÀå.
+ê¸°ì›ì „ 4712ë…„ ë¶€í„° 9999ë…„ê¹Œì§€ì˜ ì—°,ì›”,ì¼,ì‹œ,ë¶„,ì´ˆì˜ ìë£Œë¥¼ ì €ì¥.
 
 
-> ¿¹½Ã
-
+**ì˜ˆì‹œ**
+```
 insert into dateTable(d1) values(to_date('20180105','YYMMDD));
 
 select to_char(d1,'YY/MM/DD') from dateTable;
+```
 
-
-> date type º¯°æ
-
+**date type ë³€ê²½**
+```
 alter session set nls_Date_format='YYYY.MM.DD HH24:MI:SS';
+```
 
-
-> date type È®ÀÎ
+**date type í™•ì¸**
 
 select sysdate from dual;
  
