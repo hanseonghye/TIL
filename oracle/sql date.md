@@ -12,3 +12,4 @@ alter session set nls_Date_format='YYYY.MM.DD HH24:MI:SS';
 
 > date type »Æ¿Œ
 select sysdate from dual;
+ 

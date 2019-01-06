@@ -7,4 +7,4 @@ create table table_name(
 );
 
 > table ªË¡¶
-drop table table_name;
+drop table table_name;  

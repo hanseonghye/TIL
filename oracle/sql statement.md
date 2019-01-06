@@ -13,4 +13,4 @@ where condition;
 문자합치기
 select 1||2 from dual;
 --> 12
-select '1'||'2' from dual; 와 같은 결과를 냄.
+select '1'||'2' from dual; 와 같은 결과를 냄. 

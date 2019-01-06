@@ -7,4 +7,4 @@ mysql -u root -p
 show database;
 
 > table º¸±â
-desc table_name;
+desc table_name;  
