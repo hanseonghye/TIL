@@ -1,10 +1,10 @@
 # mysql
 
-> mysql ½ÇÇà
+> mysql ì‹¤í–‰
 mysql -u root -p
 
-> database ¸ðµÎ º¸±â
+> database ëª¨ë‘ ë³´ê¸°
 show database;
 
-> table º¸±â
+> table ë³´ê¸°
 desc table_name;  
