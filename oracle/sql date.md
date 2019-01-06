@@ -18,6 +18,6 @@ alter session set nls_Date_format='YYYY.MM.DD HH24:MI:SS';
 ```
 
 **date type 확인**
-
+```
 select sysdate from dual;
- 
+ ```
