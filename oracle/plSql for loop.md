@@ -2,12 +2,12 @@
 
 for i in 0..100 loop
 
-	Ã³¸®¹®;
+	ì²˜ë¦¬ë¬¸;
 
 end loop;
 
 
-> ¿¹½Ã
+> ì˜ˆì‹œ
 
 set serveroutput on;
 
