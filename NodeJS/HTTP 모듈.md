@@ -31,6 +31,10 @@ http.get('http://google.co.kr', (res) => {
 
 
 
+---
+
+
+
 #### http.post
 
 헤더를 이용.
