@@ -8,7 +8,7 @@ TCP/IP프로토콜 위에서 작동한다.
 
 ---
 
-#### http 응답 코드
+### http 응답 코드
 
 - 200 (OK) : 정상적인 요청에 정상적으로 응답함.
 
@@ -30,11 +30,11 @@ TCP/IP프로토콜 위에서 작동한다.
 
 ---
 
-#### RPC vs REST
+### RPC vs REST
 
 ---
 
-#### Web Server vs Web Application Server
+### Web Server vs Web Application Server
 
 ##### Web Server
 
