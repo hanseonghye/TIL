@@ -75,3 +75,11 @@ div가 너무 많아져서 무슨 역할을 하는지 알아보기 힘들다. �
 - aside
 
 https://www.zerocho.com/category/HTML&DOM/post/5821b15f577d375e5c73bbc5
+
+
+
+### Entity
+
+- `&lt;`  '&lt;'를 html에서 표현하는 방법
+- `&nbsp` '&nbsp;' 띄어쓰기
+- 등등~
