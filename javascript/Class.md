@@ -4,6 +4,8 @@
 
 # Prototype
 
+JS는 프로토타입 기반 언어이다!!
+
 js에서 원시 타입을 제외한 모든 것들은 객체이다. 이 객체 들은 함수를 통해서 생성된다.
 
 ```javascript
@@ -16,7 +18,40 @@ let arr = [1,2,3];//js 는 이것을 다음과 같이 해석한다.
 let arr2 = new Array(1,2,3);
 ```
 
+### new
 
+``` javascript
+function newRabbit(adj){
+	this.adj = adj;
+    this.speak = function(line){
+        console.log( this.adj, " 토끼가 말합니다. ", line);
+    };
+};
+
+let rabbit1 = new newRabbit("킬러");
+rabbit1.speak("hihi");
+```
+
+```javascript
+function Rabbit(adj){
+    return {
+        adj : adj,
+        speak : function(line){
+            console.log( this.adj, " 토끼가 말합니다. ", line);
+        }
+    }
+};
+
+let rabbit2 = Rabbit("킬러");
+rabbit2.speak("하이루");
+```
+
+두 코드의 차이는 뭘까 :face_with_head_bandage:
+
+:arrow_forward:__new를 사용했을때__
+
+1. 생성자라는 프로퍼티가 있다. 이것은 newRabbit을 생성한 rabbit1 함수를 가리킨다. 
+   Rabbit에도 그런 프로퍼티가 있지만, Rabbitsms Object함수를 카리킨다.
 
 ### 함수 생성시 발생하는 일
 
