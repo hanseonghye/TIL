@@ -132,15 +132,15 @@ https://jeong-pro.tistory.com/80?category=793347
 
 ### 서블릿 ( Servlet )
 
-클라이언트의 요청에 따른 결과를 자바로 짠 프로그램
+클라이언트의 요청에 따른 결과를 자바로 짠 프로그램. 자바로 만든 CGI프로그램을 서블릿이라한다.
 
 ### CGI ( Common Gateway Interface )
 
-TODO
+:arrow_forward: 웹서버가 CGI 스크립트 ( php, jsp, asp ...)들과 통신하는 방법
 
-웹서버가 CGI 스크립트 ( php, jsp, asp ...)들과 통신하는 방법
+:arrow_forward: 웹 서버와 프로그램 사이에 데이터를 주고 받는 규칙.
 
-
+웹 서버는 클라이언트가 요청한 프로그램을 찾아서 실행하고, 수행한 후 그 결과를 웹 서버에 돌려준다. 그럼 웹 서버는 http형식에 맞춰서 웹브라우저에게 보내 클라이언트가 요청한 결과를 볼수 있게 된다. 이때 웹 서버와 프로그램 사이에서 데이터를 주고 받는 규칙을 CGI라고 한다.
 
 ### Load Balancing
 
