@@ -14,7 +14,7 @@ JS에서 원시타입을 제외한 모든 것들은 객체이다. JS의 모든 �
 let foo = {
     val1 : "val1",
     val2 : "val2"
-};
+}; //이러한 방식으로 객체를 생성하는 것을 객체 리터럴 방식이라 한다.
 
 console.log( foo.toString() );
 console.log( foo );
@@ -24,13 +24,13 @@ foo 객체는 toString() 메서드가 없기 때문에 에러를 발생해야할
 
 ![ex_screenshot](./img/class-tostring.png)
 
-위와 같이 foo 객체의 `__proto_`프로퍼티에 toString() 메서드가 있음을 확인할 수 있다.
+위와 같이 foo 객체의 `__proto__`(크롬에서 prototype을 표현하는 방법)프로퍼티에 toString() 메서드가 있음을 확인할 수 있다.
 
 여기서 `__proto__` 프로퍼티는 foo객체의 부모인 프로토타입 객체를 가리킨다.
 
 ---
 
-### 객체 비교
+## 객체 비교
 
 동등 연산자(==)를 사용하여 두 객체를 비교할 때, 객체의 프로퍼티값이 아닌 참조값을 비교한다.
 
@@ -52,3 +52,15 @@ console.log( objC == objB ); //true
 ![ex_screenshot](./img/equal.png)
 
 `objA == objB`와 `objC == objB`의 경우 객체의 비교에서는 참조값이 같아야 true가 되기 때문이다. 위의 그림과 같인 objB와 objC는 같은 객체를 참조하므로 true가 된다. objB나 objC중 하나의 값이 바뀌게 되면 같은 참조값이 변경되고 두개의 객체 모두에 영향을 끼친다.
+
+
+
+### 객체 리터럴 방식과 생성자 함수의 차이
+
+:arrow_forward: 생성자 함수를 통한 객체 생성[ [link](https://github.com/hanseonghye/TIL/blob/master/javascript/%EB%B3%80%EC%88%98.md) ]
+
+- 리터럴 방식의 경우 같은 형태의 객체를 재생성할 수 없다.
+- 생성자 함수의 경우 함수를 호출할 때 인자값에 따라 같은 형태의 다른 객체를 생성할 수 있다.
+- 프로토타입
+  - 리터럴 방식의 경우 프로토타입이 **Object**이다.
+  - 생성자 함수의 경우 해당 함수가 프로토타입이다
