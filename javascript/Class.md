@@ -57,10 +57,102 @@ console.log( objC == objB ); //true
 
 ### 객체 리터럴 방식과 생성자 함수의 차이
 
-:arrow_forward: 생성자 함수를 통한 객체 생성[ [link](https://github.com/hanseonghye/TIL/blob/master/javascript/%EB%B3%80%EC%88%98.md) ]
+:arrow_forward: 생성자 함수를 통한 객체 생성[ [link](https://github.com/hanseonghye/TIL/blob/master/javascript/%ED%95%A8%EC%88%98.md) ]
 
 - 리터럴 방식의 경우 같은 형태의 객체를 재생성할 수 없다.
 - 생성자 함수의 경우 함수를 호출할 때 인자값에 따라 같은 형태의 다른 객체를 생성할 수 있다.
 - 프로토타입
   - 리터럴 방식의 경우 프로토타입이 **Object**이다.
   - 생성자 함수의 경우 해당 함수가 프로토타입이다
+
+
+
+## call과 apply 메서드를 이용한 명시적인 this 바인딩
+
+내부적인 this 바인딩 ( let that = this )외에도 this를 특정 객체에 명시적으로 바인딩 시키는 방법. 이 메서드들은 모든 함수의 부모 객체인 Function.prototype 객체의 메서드이다.
+
+```javascript
+Function.apply(thisArg, argArray);
+```
+
+위의 형태로 메서드 호출이 가능하다. call과 apply의 차이는 넘겨받는 인자의 형식 뿐이다.
+
+- thisArg
+
+  apply() 메서드를 호출한 함수 내부에서 사용한 this에 바인딩할 객체를 가리킨다.
+
+- argArray
+
+  함수를 호출할 때 넘길 인자들의 배열
+
+```javascript
+function Person(name, age, gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+};
+
+let foo = {};
+Person.apply(foo,['foo',30,'male']);
+Person.call(foo,'foo',30,'male'); // 위 문장과 같은 수행
+```
+
+## 프로토타입의 두 가지 의미
+
+##### prototype과 prototype 프로퍼티
+
+- prototype ( == `__proto__` )
+
+  객체의 부모를 가리키는 프로퍼티
+
+- prototype 프로퍼티
+
+  객체가 생성될 당시 만들어지는 객체 자신의 원형이될 프로퍼티
+
+  
+
+```javascript
+function Person(name){
+	this.name = name;
+};
+
+let foo = new Person('hehe');
+console.dir(Person);
+console.dir(foo);
+```
+
+![ex_screenshot](./img/class-diff.png)
+
+`
+
+1. Person 생성자 함수의 prototype 프로퍼티
+
+2. Person 생성자 함수의 부모 프로퍼티 ( == prototype )
+
+3. foo 객체의 부모는 Person 함수이다!
+
+   Person() 생성자 함수의 prototype 프로퍼티와 foo 객체의 `__proto__` 프로퍼티가 같은 객체를 가리키고 있는 것을 확인 할 수 있다!
+
+**`__proto__` 프로퍼티는 모든 객체에 존재하는 숨겨진 프로퍼티로 객체 자신의 프로토타입 객체를 가리키는 참조 링크 정보다.**
+
+## 프로토타입 체이닝
+
+JS에서는 자신의 부모 역할을 하는 프로토타입 객체의 프로퍼티 또한 마치 자신의 것처럼 접근할 수 있다. 이것을 **프로토타입 체이닝**이라 한다.
+
+### 체이닝의 종점 : Object.prototype
+
+Object.prototype 객체는 프로토타입 체이니으이 종점이다. 즉 모든 객체는 프로토타입 체이닝으로 Object.prototype 객체가 가진 프로퍼티와 메서드에 접근하고 공유가 가능하다.
+
+- 사용자가 직접 빌트인 프로토타입 객체(Object, String ...)에 메서드를 추가할 수 있다.
+
+  ```javascript
+  String.prototype.testMethod = function(){
+      console.log('this is the test...');
+  };
+  
+  let str = 'test';
+  str.testMethod();
+  ```
+
+  
+

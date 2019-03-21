@@ -1,10 +1,12 @@
-# JS와 객체 지향 프로그래밍
+# ~~JS와 객체 지향 프로그래밍~~
 
-
+:arrow_forward: 다시 공부해서 작성 [ link ](https://github.com/hanseonghye/TIL/blob/master/javascript/%ED%95%A8%EC%88%98.md)
 
 프로젝트의 대형화로 인해 비슷한 함수나 객체를 묶어서 개발할 필요가 생김.
 
 ### Apply 와 Call
+
+두 메서드는 같은 기능을 하며 넘겨받는 인자의 형식만이 다르다.
 
 ``` javascript
 let myMethods = {
