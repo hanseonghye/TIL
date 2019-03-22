@@ -154,5 +154,8 @@ Object.prototype 객체는 프로토타입 체이니으이 종점이다. 즉 모
   str.testMethod();
   ```
 
-  
+
+
+
+:sos:인사이드 자바스크립트:book:
 
