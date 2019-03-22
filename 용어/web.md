@@ -1,14 +1,14 @@
 # :heart: WEB :blue_heart:
 
-### RPC vs REST
+## RPC vs REST
 
 ...TODO
 
 ---
 
-### Web Server vs Web Application Server
+## Web Server vs Web Application Server
 
-##### Web Server
+### Web Server
 
 웹 클라이언트의 요청을 받아서 요청을 처리하고 그 결과를 웹 클라이언트에게 응답함.
 
@@ -18,7 +18,7 @@ ex) Apache httpd, Nginx
 
 
 
-##### Web Application Server (WAS)
+### Web Application Server (WAS)
 
 웹 서버로부터 동적 페이지 요청을 받아서 요청을 처리함. ( web server ----- 정적페이지 전달 -----> WAS )
 
@@ -36,7 +36,7 @@ ex) Apache Tomcat, Jeus
 
 was가 정적, 동적 페이지 모두 처리하는 것 보다 정적은 was가 동적은 web server가 처리하는 것이 성능에 좋다. web server는 캐시, 프록시, 프로세스 관리 등 페이지를 처리하는 것 외에도 많은 기능을 한다.
 
-but 최근의 was는 web server보다 성능이 좋다고 한다. 다만 로드밸런싱을 위해서라면 web server와 사용해도된다??
+but 최근의 was는 web server보다 성능이 좋다고 한다. 다만 로드밸런싱을 위해서라면 web server와 사용해도된다.
 
 ---
 
@@ -82,21 +82,45 @@ but 최근의 was는 web server보다 성능이 좋다고 한다. 다만 로드�
 
 https://jeong-pro.tistory.com/80?category=793347
 
----
 
-### 서블릿 ( Servlet )
 
-클라이언트의 요청에 따른 결과를 자바로 짠 프로그램. 자바로 만든 CGI프로그램을 서블릿이라한다.
-
-### CGI ( Common Gateway Interface )
+## CGI ( Common Gateway Interface )
 
 :arrow_forward: 웹서버가 CGI 스크립트 ( php, jsp, asp ...)들과 통신하는 방법
 
-:arrow_forward: 웹 서버와 프로그램 사이에 데이터를 주고 받는 규칙.
+:arrow_forward: **웹 서버와 프로그램 사이에 데이터를 주고 받는 규칙.**
 
 웹 서버는 클라이언트가 요청한 프로그램을 찾아서 실행하고, 수행한 후 그 결과를 웹 서버에 돌려준다. 그럼 웹 서버는 http형식에 맞춰서 웹브라우저에게 보내 클라이언트가 요청한 결과를 볼수 있게 된다. 이때 웹 서버와 프로그램 사이에서 데이터를 주고 받는 규칙을 CGI라고 한다.
 
-### Load Balancing
+##### 작동 원리
+
+웹 서버가 클라이언트로부터 받은 요청을 웹 서버상에서 작동하는 프로그램에 보낸다. 프로그램은 요청을 참조해 HTML( or 다른 문법이 정해진 데이터 )을 생성한 다음 서버에 돌려보낸다. 그러면 웹 서버는 프로그램으로부터 받은 HTML을 마치 미리 준비돼 있었다는 듯이 웹 어플리케이션에 보낸다.
+
+#### CGI를 둘러싼 문제점
+
+웹 브라우저에서 요청이 올때마다 CGI를 통해 프로세스를 기동했다. 이때문에 시간을 필요로했고, 많은 접속자가 있는 사이트에서는 프로그램의 기동 처리가 많아져 요청을 따라잡기 힘들어 졌다.  --> 현재는 많은 개선사항이 있다.
+
+
+
+## 서블릿 ( Servlet ) 과 JSP
+
+클라이언트의 요청에 따른 결과를 자바로 짠 프로그램. 자바로 만든 CGI프로그램을 서블릿이라한다.
+
+웹 서버와 같은 프로세스 속에서 생성하는 프로그램이 작동하기 때문에 매번 프로세스를 기동할 필요가 없다.
+
+#### 서블릿의 문제점
+
+자바코드로 html페이지를 만드는 것은 어려운 작업이며 테스트도 불편하다. 언어의 한계!!
+
+#### JSP의 탄생
+
+이런 상황을 개선하기 위해 JSP(Java Server Pages)가 등장했다.
+
+html에서 동적으로 출력하고 싶은 부분을 특정 태크를 통해 표현한다.
+
+
+
+## Load Balancing
 
 하나의 인터넷 서비스가 발생하는 트래픽이 많을 때 여러대의 서버가 분산처리하여 서비의 로드율 증가, 부하량, 속도저하 등을 고려하여 적절히 분산처리하여 해결해주는 서비스
 
