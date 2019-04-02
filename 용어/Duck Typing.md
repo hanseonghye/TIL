@@ -36,4 +36,4 @@ lift_off(whale); #threws error
 
 
 
-# https://nesoy.github.io/articles/2018-02/Duck-Typing
+#https://nesoy.github.io/articles/2018-02/Duck-Typing
