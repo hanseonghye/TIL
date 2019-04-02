@@ -14,9 +14,13 @@
 
 ![img](./img/img1.png)
 
+### 아파치 설정 파일 수정
 
+`vi /etc/apache2/site-available/000-default.conf` 파일을 수정한다. 실행한 프로그램의 위치를 입력해서 이 프로그램을 아파치를 통해 실행할 것이라는 것을 알려준다.
 
+![img](./img/img2.png)
 
+[예시]
 
 ## for Python
 
