@@ -3,3 +3,4 @@
 `/etc/sysconfing/network-scripts/ifcfg-eth0`에서 `ONBOOT = yes`
 
 ![img](./img/img3.png)
+
