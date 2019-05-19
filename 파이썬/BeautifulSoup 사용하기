@@ -1,0 +1,247 @@
+# BeautifulSoup 사용하기
+
+### 자식 태그 접근하기
+
+- contents
+
+  ```python
+  from bs4 import BeautifulSoup
+  
+  html = """<html> <head><title>test site</title></head>
+  			<body>
+  				<p>
+  					<span>test1</span>
+  					<span>test2</span>
+  				</p>
+  				<p>test1</p>
+  				<p>test2</p>
+  			</body>
+  		</html>"""
+  
+  soup = BeautifulSoup(html,'lxml')
+  tag_children = soup.p.contents;
+  print(tag_children)
+  ```
+
+- children
+
+  ```python
+  from bs4 import BeautifulSoup
+  
+  html = """<html> <head><title>test site</title></head>
+  			<body>
+  				<p>
+  					<span>test1</span>
+  					<span>test2</span>
+  				</p>
+  				<p>test1</p>
+  				<p>test2</p>
+  			</body>
+  		</html>"""
+  
+  soup = BeautifulSoup(html,'lxml')
+  tag_children = soup.p.children;
+  
+  
+  for child in tag_children:
+  	print(child)
+  ```
+
+
+
+### 부모 태그 접근하기
+
+- parent
+
+  바로 위의 태그를 가져온다.
+
+  ```python
+  from bs4 import BeautifulSoup
+  
+  html = """<html> <head><title>test site</title></head>
+  			<body>
+  				<p>
+  					<span>test1</span>
+  					<span>test2</span>
+  				</p>
+  				<p>test1</p>
+  				<p>test2</p>
+  			</body>
+  		</html>"""
+  
+  soup = BeautifulSoup(html,'lxml')
+  
+  tag_span = soup.span
+  tag_title = soup.title
+  
+  span_parent = tag_span.span_parent
+  title_parent = tag_title.title_parent
+  
+  print('---태그---')
+  print(tag_span)
+  print(tag_title)
+  
+  
+  print('---부모 태그---')
+  print(span_parent)
+  print(title_parent)
+  ```
+
+- parents
+
+  `contents`와 `children`과의 차이와 같음. for loop를 통해 확인.
+
+### 형제 태그 접근하기
+
+> 서로 태그가 같을 필요는 없다.
+
+- sibling
+
+  ```python
+  from bs4 import BeautifulSoup
+  
+  html = """<html> <head><title>test site</title></head>
+  			<body>
+  				<p>
+  					<span>test1</span><span>test2</span>
+  				</p>
+  				<p>test1</p>
+  				<p>test2</p>
+  			</body>
+  		</html>"""
+  
+  soup = BeautifulSoup(html,'lxml')
+  
+  tag_span = soup.span
+  
+  
+  a = tag_span.next_sibling
+  b = a.previous_sibling
+  
+  
+  print(tag_span)
+  print(a)
+  print(b)
+  ```
+
+- siblings
+
+### 다음, 이전 요소 접근하기
+
+- elements
+  - next_elements
+
+
+
+## 원하는 요소 정확히 접근하기
+
+### find_all()
+
+> 원하는 태그들을 리스트 형태로 얻을 수 있다.
+
+```python
+soup = BeautifulSoup(html,'lxml')
+soup.find_all('title')
+soup.find_all('p')
+```
+
+- `id`로 find
+
+  ```python
+  soup = BeautifulSoup(html,'lxml')
+  soup.find_all(id='my-id')
+  
+  soup.find_all('p', id='my-id')
+  ```
+
+  id 값은 해당 페이지에서 한 번만 사용 가능하므로 하나 또는 빈 리스트가 출력된다.
+
+- 클래스로 find
+
+  ```python
+  soup = BeautifulSoup(html,'lxml')
+  soup.find_all(id='my-id')
+  
+  soup.find_all('p', class_='my-class')
+  ```
+
+  
+
+- text 속성으로 find
+
+  ```python
+  soup = BeautifulSoup(html,'lxml')
+  soup.find_all(id='my-id')
+  
+  soup.find_all('p', text = "text1")
+  ```
+
+  p tag 중 'text1'이라는 값을 가진 태그를 찾는다.
+
+- limit 주기
+
+  ```python
+  soup = BeautifulSoup(html,'lxml')
+  soup.find_all(id='my-id')
+  
+  soup.find_all('p', text = "text1", limit = 3)
+  ```
+
+### find
+
+> find_all()과 다르게 하나의 요소만 가져온다.
+>
+> 해당 요소가 없으면 None을 반환한다.
+>
+> find_all('p'm limit=1)[0] 과 같은 결과를 가져올 수도 있지만, find_all의 경우 해당 index가 없으면 에러를 발생시킨다.
+
+
+
+---
+
+---
+
+### extract()
+
+> 태그를 지우는 역할.
+>
+> 실제 웹 사이트의 html을 가져오면 상당한 용량을 요구한다. 이떄 style, script와 같이 크롤링이 필요없는 태그를 제거해서 사용할 수 있다.
+
+- body를 지워보자.
+
+  ```python
+  from bs4 import BeautifulSoup
+  
+  html = """<html> <head><title>test site</title></head>
+  			<body>
+  				<p>
+  					<span>test1</span>dd<span>test2</span>
+  				</p>
+  				<p>test1</p>
+  				<p>test2</p>
+  			</body>
+  		</html>"""
+  
+  soup = BeautifulSoup(html,'lxml')
+  
+  a = soup.body.extract()
+  
+  print(a)
+  print(soup)
+  ```
+
+- find_all()에서 for loop를 돌때 extract()를 적용하면 특정 요소의 태그들을 삭제할 수 있다.
+
+### select()
+
+> find_all() 처럼 리스트로 find 결과값을 반환한다.
+>
+> 또한 css 셀렉터를 활용하여 원하는 요소를 가져올 수 있다.
+
+```python
+soup.select('p')
+soup.select('#i')
+soup.select('p#i')
+soup.select('.d')
+```
+
