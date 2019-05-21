@@ -30,7 +30,11 @@
 - HAVING
   - Group을 거친 값에대한 조건을 기술
 
+### delete
 
+- delete from [table]
+
+  
 
 ### sql 파일 mysql에 넣기
 
@@ -191,3 +195,4 @@ delete from member where no =1;
 
 select * from member;
 ```
+
