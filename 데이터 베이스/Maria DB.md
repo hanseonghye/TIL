@@ -34,7 +34,11 @@
 
 - delete from [table]
 
-  
+### alter
+
+- alter table user add column role enum('ADMIN','USER') default 'USER' NOT NULL after gender;
+
+
 
 ### sql 파일 mysql에 넣기
 

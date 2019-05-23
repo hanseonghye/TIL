@@ -2,7 +2,7 @@
 
 ## Root Set
 
-> object의 사용 여부는 Root Set과의 관계로 판단하게 되는데, Root Set에서 어떤 식으로든 참조 관계까 있다면 **Reachable Object**라고 하며, 이를 현재 사용하고 있는 Object로 간주하게 된다.
+> object의 사용 여부는 Root Set과의 관계로 판단하게 되는데, Root Set에서 어떤 식으로든 참조 관계가 있다면 **Reachable Object**라고 하며, 이를 현재 사용하고 있는 Object로 간주하게 된다.
 
 ### Reachable Object를 구별하는 방법
 
@@ -79,6 +79,84 @@
 >
 > 각 스레드 별 메모리 버퍼를 사용하면, 다른 스레드에 영향을 주지 않는 메모리 할당 작업이 가능하게 된다.
 
-### GC 대상 범위
+## Garbage Collection의 종류
 
-GC대상 Area는 
+### Old 영역에 대한 GC
+
+> JDK7에서는 GC방식의 종류에 따른 다음의 5가지 GC를 가지고 있다.
+
+- Serial Collection
+
+  - PC의 CPU 코어가 하나만 있을 때, 사용하기 위해서 만든 방식.
+
+  - Old영역의 GC는 `mark-sweep-compact`알고리즘을 사용한다.
+
+    - mark-sweep-compact
+
+      old영역에 살아 있는 객체를 식별(mark)하는 것.
+
+  - 절대 사용해서는 안되는 GC. 사용할 경우 어플리케이션의 성능이 많이 떨어진다.
+
+    
+
+- Parallel Collection (Throughput Collector)
+
+  - Serial Collection과 같은 알고리즘을 쓴다.
+  - 단 처리하는 쓰레드가 여러개다.
+  - 그래서 Serial 보다 빠르게 객체를 처리할 수 있다.
+  - 코어의 개수가 많을 때 유리하다.
+
+- CMS Collection ( == low latency collector )
+
+  - 힙 메모리 영역의 크기가 클 때 적합.
+  - suspend Time 을 분산하여 응답 시간을 개선한다.
+  - Full GC때 어플리케이션이 막는 것을 방지하기 위해 고안됨.
+  - 하나 이상의 백그라운드 쓰레드가 주기적으로 Old 영역을 스캔하고 사용되지 않는 객체를 제거한다.
+  - 그렇기 때문에 CPU 소모량이 많고 단편화가 생기게 된다.
+
+  #### 자세히 알아보자
+
+  - 초기 **Initial Mark** 단계에서는 클래스 로더에서 가장 가까운 객체 중, 살아 있는 객체만 찾는 것으로 끝낸다. 싱글 스레드에서만 사용한다.
+
+  - **Concurrent Mark**에서는 방금 살아있다고 확인한 객체에서 참조하고 있는 객체들을 따라가면서 확인한다. 싱글 스레드에서만 사용.
+
+  - remark mark
+
+    멀티 스레드가 사용되며 어플리케이션이 중지된다.
+
+    이미 marking된 object를 다시 추적, live 여부 확정, 새로 추가된 객체 여부 확인.
+
+     모든 자원을 투입한다.
+
+  - Concurrent Sweep
+
+    쓰레기를 정리함.  그런데 이 과정에서 죽은 객체를 지우기만 하기 때문에 단편화가 발생한다. 이것은 **Free List**를 사용하여 단편화를 지우고자 노력한다.
+
+    #### Free List
+
+    객체가 Young 영역에서 Old 영역으로 이동( ==승격 == promotion )할때 객체의 크기가 비산한 Old 영역에서의 Free Space를 찾아 그곳에 객체를 넣는것. 그리고 Free Space의 블록들을 붙이거나 쪼개는 것. (Compaction 작업) 그런데 이 과정 자체가 시간을 소모하고 객체가 Young 영역에서 오래 머무르는 결과를 가져 올 수 있다.  또한 compaction은 고비용의 작업이다. 그래서 승격이 일어나는 횟수 와 같은 요소를 고려하여 얼마나 Compaction을 할 것이지 등을 결정해야한다.
+
+- Parallel Compaction Collector
+
+  - Parallel Compaction 단계에서 old 알고리즘이 한단계 추가 된다. 다음의 3단계를 거친다.
+
+    1. mark
+
+       살아 있는 객체를 식별하여 표시
+
+    2. sweep
+
+       이전에 GC를 수행하여 컴팩션된 영역에 살아 있는 객체의 위치를 조사.
+
+    3. compact 
+
+       컴팩션을 수행. 수행 이후에는 컴팩션된 영역과 비어있는 영역으로 나뉜다. ???
+- Garbage First Collector
+
+  - cms의 단편화 문제를 해결하기 위해 디자인.
+  - 힙을 여러개의 영역(region)으로 나눈다. 어떤 힙은 young를 위해 어떤 힙은 old에게 분배.
+  - cms처럼 백그라운드 쓰레드로 old 영역에서의 객체를 정리한다. 이때 cms에서 쓸모없는 객체를 쏙쏙 빼버리는게 아니라 한 region을 통째로 정리해 버린다. 참조가 없는 객체는 버리고 사용 중인 남아있는 객체는 다른 region으로 복사시킨다. 이 때문에 단편화가 생기지 않게 된다.
+
+:pushpin:GC도 특정 쓰레드에서 실행된다. GC 쓰레드가 동작할 떄는 모든 어플리케이션 쓰레드는 동작을 멈춘다. 때문에 FULL GC가 생기면 시스템이 멈추게 된다. 그렇기 때문에 GC가 동잘될 떄, 어플리케이션 쓰레드가 멈추는 시간을 최소화 하는 것이 GC 튜닝의 기본이라고 한다.
+
+<https://free-strings.blogspot.com/2016/02/jvm-garbage-collector.html>
