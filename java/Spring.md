@@ -16,7 +16,7 @@
 ### 컨테이너
 
 - 객체들의 라이프 사이클을 관리
-- 컨테이너에서 제공하는 API를 상속받거나 구현하여 코드를 작성하는 부분들을 제거 --> 반복적인 코드의 제거
+- 컨테이너에서 제공하는 API를 상속받거나 구현하여 코드를 작성하는 부분들을 제거 --> 반복적인 코드의 제거 ----> EJB의 서비스 컨테이너의 기능은 유지해되, 복잡성을 제거한 컨테이너의 필요성.
 - ...
 
 
@@ -30,12 +30,13 @@
 ### Bean
 
 - 스프링이 제어권을 가지고 직접 만들고 관계를 부여하는 오브젝트
+- 스프링 컨테이너에서 생성된 객체를 Bean이라 한다. 
 
 ### POJO
 
 > Plain Old Java Object
 
-- 클래스 :arrow_forward:클래스 하나하나를 POJO라 한다 (예외 O)
+- 클래스 :arrow_forward:클래스 하나하나를 POJO라 한다 (예외 O).
 
 ![img](./img/img1.png)
 
@@ -63,5 +64,5 @@
 4. root-context.xml에 등록되어있는 `스프링 컨테이너`가 구동된다. 이 때 개발자가 작성한 로직에 대한부분, Dao, Vo 객체들이 생성된다.
 5. 클라이언트로부터 요청이 들어온다.
 6. DispatcherServlet이 생성된다. 이 서블릿은 FrontController의 역할을 수행한다. 요청을 분석하여 알맞은 PageController에게 전달한다. 실질적인 작업은 PageController에서 이루어진다.
-7. DispatcherServlet는 servlet-contexxt.xml 을 loading한다.
+7. DispatcherServlet는 servlet-context.xml 을 loading한다.
 8. 두번째 스프링 컨테이너가 구동되며 응답에 맞는 PageController들이 동작한다. 이 때, 첫번째 컨테이너가 구동되면서 생성된 Dao, vo 등의 클래스들과 협업하여 알맞은 작업을 처리하게 된다.
