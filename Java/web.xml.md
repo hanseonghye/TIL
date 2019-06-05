@@ -12,7 +12,7 @@
 
   - Servlet context의 파라미터를 선언해주는 부분. 전역변수를 설정하는 느낌.
   - param-name : 파라미터의 이름
-  - param-name : 파라미터를 호출했을 때의 값
+  - param-value : 파라미터를 호출했을 때의 값
 
   
 

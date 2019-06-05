@@ -58,7 +58,7 @@
 
   `> create user '[계정 이름]'@'localhost' identified by '[password]';`
 
-  `> grant all privileges on [table]  to '[계정이름]@'localhost';` --> 권한 부여
+  `> grant all privileges on [table].*  to '[계정이름]'@'localhost';` --> 권한 부여
 
   `> flush privileges;`
 
@@ -68,7 +68,7 @@
 
   or
 
-  `> grant all privileges on [table] to '[계정이름]'@'192.168.1.%' identified by '[password]';`
+  `> grant all privileges on [table].* to '[계정이름]'@'192.168.1.%' identified by '[password]';`
 
 
 
