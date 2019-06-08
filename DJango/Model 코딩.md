@@ -1,5 +1,7 @@
 # Model 코딩
 
+> 모델 작업은 데이터 베이스에 테이블을 생성하도록 해주는 작업이다.
+
 ### 테이블 정의
 
 장고에서는 테이블을 하나의 클래스로 정의하고 테이블의 컬럼은 클래스의 변수로 매핑한다. 
@@ -27,6 +29,18 @@
 
   테이블 및 필드의 생성, 삭제, 변경 등과 같이 디비에 대한 변경사항을 알려주는 정보. 장고에서는 `makemigrations`명령에 의해 마이그레이션 파일들이 생성되고 이 파일들을 이용해 `migrate`명령으로 디비에 테이블을 만들어 준다.
 
+### Admin 사이트에 테이블 반영
 
+```python
+#bookmark/admin.py
 
-  
+from django.contrib import admin
+from bookmark.models import Bookmark
+
+class BookmarkAdmin(admin.ModelAdmin):
+    list_display = ('title','url')
+
+admin.site.register(Bookmark,BookmarkAdmin)
+```
+
+`BookmarkAdmin` class는 `Bookmark`class가 Admin사이트에서 어떤 모습으로 보여줄지를 정의하는 클래스 이다. Bookmark 내용을 보여줄 때, title과 url을 화면에 출력하라고 지정한다 그리고 `admin.site.register()`함수를 사용해 `Bookmark`와 `BookmarkAdmin`클래스를 등록한다.

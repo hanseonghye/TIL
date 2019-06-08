@@ -1,4 +1,4 @@
-# apache in linux
+# apache in linux (ubuntu)
 
 #### 설치
 
@@ -88,7 +88,7 @@
     exit 0
     ```
 
-2. 실행 권한을 풀어준다.
+2. 실행 파일로 만들어준다.
 
    `chmod 775 tomcat`
 

@@ -34,6 +34,29 @@
 
 init, del과 같은 특수 메소드. 객체를 호출할 때 실행된다.
 
+### `__new__`
+
+클래스 자체를 받으며 할당하게 되고,  `__init__`가 self를 받으며 객체의 내부에서 사용할 속성을 초기화 한다.
+
+```python
+class Flight:
+    
+    def __init__(self):
+        print('init')
+        super().__init__()
+        
+    def __new__(cls):
+        print('new')
+        return super().__new__(cls)
+    
+    def number(self):
+        return 'number'
+    
+f = Flight() #new init
+```
+
+
+
 
 
 ## 상속
@@ -66,6 +89,30 @@ b1.move()
 print(unit.unit_cout)
 ```
 
-:pushpin:상속을 받을 떄는, 클래스 명 옆 괄호에 부모 클래스를 넣어주면 된다.
+:pushpin:상속을 받을 때는, 클래스 명 옆 괄호에 부모 클래스를 넣어주면 된다.
 
-:pushpin:`super(해당 클래스명, self).__init__()`을 자식 생성자에 넣어주면 자식 생성자가 호출될 떄마다, 부모 생성자를 호출한다.
+:pushpin:`super(해당 클래스명, self).__init__()`을 자식 생성자에 넣어주면 자식 생성자가 호출될 때마다, 부모 생성자를 호출한다.
+
+### 다중 상속
+
+```python
+class A :
+    #something
+class B :
+    #something
+class C (A,B):
+    #subclass
+```
+
+### .mro() 메소드
+
+해당 클래스의 상속관계를 확인할 수 있다.
+
+
+
+### 정적 메소드 : @classmethod와 @staticmethod
+
+- 클래스에서 직접 접근할 수 있는 메소드
+- 다른 언어들과 다르게 정적메소드 임에도, 인스턴스에서도 접근이 가능하다.
+
+`todo`

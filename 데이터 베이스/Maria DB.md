@@ -70,10 +70,6 @@
 
   `> grant all privileges on [table].* to '[계정이름]'@'192.168.1.%' identified by '[password]';`
 
-
-
-
-
 ## join
 
 ### inner join
