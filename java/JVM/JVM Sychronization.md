@@ -159,3 +159,46 @@ public class ThreadA {
 **:pushpin:Synchronized 키워드를 사용하는 작업은 오버헤드를 따른다. 반드시 필요한 경우에만 사용해야 한다.**
 
 요즘은 성능을 위해 아예 사용하지 않는 추세라고 한다.
+
+
+
+## Thread 상태
+
+Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름을 가진 `Enum`으로 선언되어 있다.
+
+![img](./img/img5.png)
+
+- new
+
+  스레드가 생성됐지만, 아직 실행되지 않은 상태
+
+- runnable
+
+  현재 CPU를 점유하고 작업을 수행중인 상태.  운영체제의 자원 분배로 인해 waiting 상태가 될 수도 있다.
+
+- blocked
+
+  monitor를 획득하기 위해 다른 스레드가 락을 해제하기를 기다리는 상태
+
+- waiting
+
+  wait() 메서드, join() 메서드, park() 메서드 등을 이용해 대기하고 있는 상태.
+
+- timed_waiting
+
+  sleep(), wait(), join(), park() 메서드 등을 이요해 대기하고 있는 상태.
+
+  - waiting 상태와의 차이점은 메서드의 인수로 최대 대기 시간을 명시할 수 있어서, 외부적인 변화 뿐만 아니라 **시간**에 의해서도 waiting 상태가 해제될 수 있다는 것이다.
+
+- terminated
+
+  종료된 상태
+
+
+
+### 스레드의 종류 : 데몬 스레드와 비데몬 스레드
+
+사용자가 직접 스레드를 생성하지 않더라도, JAVA 어플리케이션이 기본적으로 여러개의 스레드를 생성한다. 대부분이 **데몬 스레드**인데 가비지 컬렉션이나 JVM등의 작업을 처리하기 위한 것이다.
+
+`'static void main(STring[] args)'
+
