@@ -10,8 +10,8 @@ from bookmark.views import BookmarkLV, BookmarkDV
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-   path('bookmark/', BookmarkLV.as_view(), name='index'),
-   path(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
+	path('bookmark/', BookmarkLV.as_view(), name='index'),
+	path(r'^bookmark/(?P<pk>\d+)/$', BookmarkDV.as_view(), name='detail'),
 ]
 ```
 

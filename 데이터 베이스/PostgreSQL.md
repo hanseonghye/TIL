@@ -80,6 +80,10 @@ USER 칸에 user 계정 적고 METHOD에 password[진짜 비밀번호가 아니�
 
 `# drop table [table]`
 
+### 테이블 명 변경
+
+`# alter table [table] rename to [바꿀 이름]`
+
 ### 컬럼명 변경
 
 `# alter table [table] rename column [기존 이름] to [바꿀 이름]` 
@@ -88,11 +92,42 @@ USER 칸에 user 계정 적고 METHOD에 password[진짜 비밀번호가 아니�
 
 `# alter table [table]  alter column [column] type [새 타입]`
 
+:pushpin:serial와 같은 특수한 타입은 이 명령어로 바꿀 수 없다. 타입을 바꿀 수 있는 특수한 함수를 사용해야 한다.
+
+`# alter table [table]  alter column [column] type [새 타입] using [column]::[새 타입]`
+
+
+데이터가 들어간 경우 안전하게 하기 위해 위의 속성을 추가한다.
+
+### 컬럼 셋팅 추가
+
+`# alter table [table] alter column [column] set [setting 정보]`
+
+예시)
+
+`# alter table member1 alter column no set not null;`
+
+### 컬럼 셋팅 제거
+
+`# alter table [table] alter column [column] drop [setting 정보]`
+
+### 컬럼 추가
+
+`# alter table [table] add [column] [type]`
+
+### 컬럼 삭제
+
+`# alter table [table] drop [column]`
+
 ### 권한 주기
 
 `# grant all privileges on all tables in schema public to [user];`
 
+### cascade
 
+참조 키를 무시하고 테이블을 삭제할 때 사용.
+
+`# drop table [table] cascade`
 
 ## sequence
 
@@ -109,6 +144,57 @@ create sequence seq_author start 1;
 ```sql
 insert into author values( nextval('seq_author'), '맹자');
 ```
+
+
+
+```sql
+create table t1(
+	c1 serial
+);
+
+insert into t1 values(default);
+
+select * from t1;
+-------------------------------------------------------
+create sequence t2_seq;
+create table t2(
+	c2 int not null default nextval('t2_seq')
+);
+alter sequence t2_sql owned by t2.c2
+insert into t2 values(default);
+select * from t2;
+```
+
+
+
+### enum
+
+```sql
+create type mood as enum('sad','ok','happy');
+create table person(
+	name varchar(10),
+	current_mood mood
+);
+insert into person values('hans','happy');
+select * from person;
+select * from person where current_mood>'ok';  -- sad < ok < happy
+```
+
+### json
+
+```sql
+select '{"result":"success", "data":1}'::json;
+
+create table t5(
+	response json
+);
+
+insert into t5 values('{"result":"success", "data":1}');
+```
+
+여기서 key를 가지고 select 하거나 insert하는 방법이 있을 것이다!!
+
+안찾아봄.
 
 
 
@@ -190,4 +276,3 @@ select emp_no, avg(salary)
 	group by emp_no
 	having avg(salary) > 1000;
 ```
-

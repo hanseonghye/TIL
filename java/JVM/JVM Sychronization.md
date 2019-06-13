@@ -162,6 +162,12 @@ public class ThreadA {
 
 
 
+---
+
+---
+
+
+
 ## Thread 상태
 
 Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름을 가진 `Enum`으로 선언되어 있다.
@@ -170,7 +176,7 @@ Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름�
 
 - new
 
-  스레드가 생성됐지만, 아직 실행되지 않은 상태
+  새로운 스레드. 스레드가 생성됐지만, 아직 실행되지 않은 상태
 
 - runnable
 
@@ -182,7 +188,9 @@ Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름�
 
 - waiting
 
-  wait() 메서드, join() 메서드, park() 메서드 등을 이용해 대기하고 있는 상태.
+  wait() 메서드, join() 메서드, park() 메서드 등에 의해서 대기하고 있는 상태.
+
+  객체가 notifyall()을 했음에도 권한을 가지지 못하면 blocked 상태가 된다.
 
 - timed_waiting
 
@@ -192,7 +200,11 @@ Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름�
 
 - terminated
 
-  종료된 상태
+  종료된 상태. 실행을 모두 마치거나 stop()이 호출되면 스레드는 소멸된다.
+
+![img](./img/img7.png)
+
+
 
 
 
@@ -200,5 +212,88 @@ Thread의 상태는 `Java.lang.Thread` 클래스 내부에 `State`라는 이름�
 
 사용자가 직접 스레드를 생성하지 않더라도, JAVA 어플리케이션이 기본적으로 여러개의 스레드를 생성한다. 대부분이 **데몬 스레드**인데 가비지 컬렉션이나 JVM등의 작업을 처리하기 위한 것이다.
 
-`'static void main(STring[] args)'
+**`'static void main(String[] args)'` **메서드가 실행되는 스레드는 비 데몬 스레드로 생성되고 이 스레드가 동작을 중지하면 다른 데몬 스레드도 같이 동작을 중지하게 된다. 사용자가 명시적으로 이 메인 메서드를 실행하지 않더라도 JVM은 하나의 **메인 스레드**를 생성해서 어플리케이션을 구동한다.
 
+비데몬 스레드에는 `Java.lang.Thread`를 상속받거나 `Java.lang.Runnable` 인터페이스를 구현함으로써 만들어 진다.
+
+
+
+#### :pushpin:데몬 : Daemon
+
+사용자가 직접적으로 제어하지 않고, 백그라운드에서 돌면서 여러 작업을 하는 프로그램.
+
+
+
+### 스레드 덤프
+
+자바에서는 스레드 동기화 문제를 분석하는 가장 기본적인 방법으로서, 스레드 덤프를 통해 분석한다.
+
+```java
+public class SingleThreadEx2 implements Runnable{
+
+    private int[] temp;
+	
+    public SingleThreadEx2(){
+	temp = new int[10];
+		
+	for(int start=0;start<temp.length;start++){
+		temp[start]=start;
+	}
+    }
+	
+    @Override
+    public void run() {
+        // TODO Auto-generated method stub
+        for(int start:temp){
+            try {
+                Thread.sleep(1000);
+
+            } catch (InterruptedException ie) {
+                ie.printStackTrace();
+                // TODO: handle exception
+            }
+
+            System.out.println("==>:"+Thread.currentThread().getName());
+            System.out.println("temp value :"+start);
+        }
+    }
+	
+    public static void main(String[] args) {
+
+        SingleThreadEx2 ct = new SingleThreadEx2();
+        Thread t = new Thread(ct,"first");
+
+        t.start();
+    }
+}
+```
+
+:arrow_double_up: 의 스레드 덤프 :arrow_double_down:
+
+![img](./img/img6.png)
+
+**first**라는 이름을 가진 스레드가 **runnable**하고 있는 상태로 `java.lang.Thread.sleep()`라는 메소드가 실행 중이다.
+
+
+
+**사용 예)**
+
+![img](./img/img8.png)
+
+thread2는 thread1가 락을 소유한 객체를 락이 풀리기를 **waiting**하고 있다.
+
+
+
+## 스레드 덤프를 이용한 문제 해결
+
+### 1. CPU 사용률이 비 정상적으로 높을 때
+
+어플리케이션을 수행할 때, CPU 사용률이 비정상적으로 높다면 스레드 덤프를 확인해 보자.
+
+CPU를 가장 많이 점유하는 스레드가 무엇인지 추출한다. 해당 스레드가 필요한 작업을 수행하는지, 처리하는 일에 비해 과도하게 CPU를 사용하지 않는지 확인하며 대처할 수 있다.
+
+### 2. 수행 성능이 비 정상적으로 느릴 때
+
+어플리케이션의 수행 성능이 비정상적으로 느릴때는 **BLOCKED**상태인 스레드가 원인이 경우가 많다. 이 때에는 스레드 덤프를 여러번 얻은 다음 **BLOCKED** 상태인 목록을 찾고 스레드가 획득하고자 하는 락과 관련된 스레드를 추출해 보자.
+
+\<https://d2.naver.com/helloworld/10963>

@@ -4,6 +4,8 @@
 
 > sudo apt-get install apache2
 
+> yum install httpd
+
 #### 특정 port 열기
 
 `ports.conf`파일에서 **Listen `port`**를 입력한다.
