@@ -1,16 +1,18 @@
 # Git 명령어
 
-<<<<<<< HEAD
-### remote
 
+### remote
 `$ git remote add origin [url]`
-=======
+
+
+
 ### git 최초 설정
 
 `$ git config --global user.name "[name]"`
 
 ` $ git config --golbal user.email [email] `
->>>>>>> 840c0bdbe792c91fb7088cd7d058a104066369b0
+
+
 
 ### 삭제된 목록 update
 
@@ -23,3 +25,12 @@
 ### push 되돌리기 , 복구
 
 `$ git reset --hard [push id]`
+
+한 다음에 push 하기
+
+`$ git push -f origin [branch]`
+
+근데 이렇게 하면 이전 commit이 다 날아간다 :cry:
+
+다른방법이 있는지는 모르겠담..
+

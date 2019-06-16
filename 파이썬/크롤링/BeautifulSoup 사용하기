@@ -205,7 +205,7 @@ soup.find_all('p')
 
 > 태그를 지우는 역할.
 >
-> 실제 웹 사이트의 html을 가져오면 상당한 용량을 요구한다. 이떄 style, script와 같이 크롤링이 필요없는 태그를 제거해서 사용할 수 있다.
+> 실제 웹 사이트의 html을 가져오면 상당한 용량을 요구한다. 이때 style, script와 같이 크롤링이 필요없는 태그를 제거해서 사용할 수 있다.
 
 - body를 지워보자.
 
@@ -226,8 +226,14 @@ soup.find_all('p')
   
   a = soup.body.extract()
   
-  print(a)
-  print(soup)
+  >>> a
+  <body>
+  <p>
+  <span>test1</span>dd<span>test2</span>
+  </p>
+  <p>test1</p>
+  <p>test2</p>
+  </body>
   ```
 
 - find_all()에서 for loop를 돌때 extract()를 적용하면 특정 요소의 태그들을 삭제할 수 있다.
