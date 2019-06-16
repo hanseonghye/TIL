@@ -21,7 +21,7 @@
 
 테이블의 신규 생성, 정의 변경 등 디비에변경이 필요한 사항이 있으면, 이를 디비에 실제로 변경해 주는 작업을 해야한다. 
 
-> python manage.py makemirations
+> python manage.py makemigrations
 >
 > python manage.py migrate
 

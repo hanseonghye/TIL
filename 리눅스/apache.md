@@ -4,6 +4,8 @@
 
 > sudo apt-get install apache2
 
+> yum install httpd
+
 #### 특정 port 열기
 
 `ports.conf`파일에서 **Listen `port`**를 입력한다.
@@ -88,7 +90,7 @@
     exit 0
     ```
 
-2. 실행 파일로 만들어준다.
+2. 해당 파일의 권한을 풀어준다. --> 실행권한을 준다. 
 
    `chmod 775 tomcat`
 

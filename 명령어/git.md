@@ -1,8 +1,16 @@
 # Git 명령어
 
+<<<<<<< HEAD
 ### remote
 
 `$ git remote add origin [url]`
+=======
+### git 최초 설정
+
+`$ git config --global user.name "[name]"`
+
+` $ git config --golbal user.email [email] `
+>>>>>>> 840c0bdbe792c91fb7088cd7d058a104066369b0
 
 ### 삭제된 목록 update
 
