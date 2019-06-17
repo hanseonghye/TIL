@@ -10,7 +10,7 @@
 
 
 
-## 예제 :memo:
+## 공격 예제 :memo:
 
 ![img](./img/img7.png)
 
@@ -46,19 +46,58 @@ csrf 공격은 이 사이트에 이미 피해자가 될 유저의 세션이 저�
 
    
 
-수정을 완료한 뒤 관리자가 해당글을 보고 버튼을 클릭하면 post 요청이 가고 다음과 같이 글이 수정된다.
-
 ![img](./img/img11.png)
 
-
+수정을 완료한 뒤 관리자가 해당글을 보고 버튼을 클릭하면 post 요청이 가고 다음과 같이 글이 수정된다.
 
 ![img](./img/img12.png)
 
 
 
+get 요청의 경우 post 요청 보다 더욱 쉽게 공격 가능하다. 또한 html에서 img 태그의 src 값으로 get 요청의 url을 넣음으로써 공격하는 방법도 있다. 대부분의 페이지가 이미지의 값을 필터링하지 않는 다는 점을 이용했다.
+
 ## 대응 방안 :+1:
 
 ### CSRF 토큰 사용
+
+요청을 할때 파라미터 값으로 서버와 약속된 정해진 무작위 값을 전달함으로써 믿을 수 있는 요청이라는 것을 인증하는 것이다.
+
+1. 클라이언트가 폼이 존재하는 html 페이지를 요청한다.
+2. 서버는 응답에 두 가지 토큰을 포함시켜 반환한다. 이 두 값은 해커가 추측할 수 없도록 무작위로 생성된다.
+   1. 쿠키를 통해서 전송.
+   2. form 필드에 해당하는 값.
+3. 클라이언트가 폼을 제출할 때, 두개의 토큰이 모두 서버로 재 전송돼야 한다. 만약 두 토큰 중 하나라도 일치하지 않으면 서버는 해당 요청을 허용하지 않는다.
+
+```java
+// 토큰 값 생성 및 전달
+String csrfToken = UUID.randomUUID().toString();
+session.setAttribute(Session.CSRF_TOKEN, csrfToken);
+```
+
+
+
+```html
+<form action='', method='post'>
+    <input type="hidden" name="csrfToken" value="${sessionScope._CSRF_TOKEN_}" />
+        ...
+</form>
+```
+
+
+
+```java
+// 토큰 값 비교
+String storedCsrfToken = (String) session.getAttribute(Session.CSRF_TOKEN);
+String requestedCsrfToken = request.getParameter("csrfToken");
+        
+if( storedCsrfToken == null || !storedCsrfToken.equals(requestedCsrfToken)){
+    return "/board";
+}
+```
+
+
+
+###  Referer 체크
 
 
 
@@ -73,3 +112,9 @@ CAPTCHA(사용자가 실제 사람인지 컴퓨터 프로그램 인지를 구별
 재인증을 통해 안전하게 실제 요청 여부를 확인 하도록 설계한다.
 
 예를 들어서 비밀번호 변경의 경우 변경할 비밀번호만 적는 것이 아니라 현재 비밀번호를 먼저 적는 절차를 넣는 것이다.
+
+
+
+<https://best421.tistory.com/64>
+
+<http://www.egocube.pe.kr/Translation/Content/asp-net-web-api/201402030001>
