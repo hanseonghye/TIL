@@ -1,5 +1,33 @@
 # class
 
+## 용어 정리
+
+1. 클래스
+
+   `class`문으로 정의하며, 멤버와 메소드를 가지는 객체
+
+2. 클래스 인스턴스
+
+   클래스를 호출하여 만들어지는 객체
+
+3. 멤버
+
+   클래스가 갖는 변수
+
+4. 메소드
+
+   클래스 내에 정의된 함수
+
+5. 상위 클래스
+
+   기반 클래스, 어떤 클래스의 상위에 있으며 여러 속성을 상속 해준다.
+
+6. 하위 클래스
+
+   파생 클래스, 상위 클래스로부터 여러 속성을 상속받는다.
+
+   
+
 ## self
 
 메소드를 호출할 때 어느 객체가 호출한 것인지 알려주는 키워드.
@@ -110,13 +138,6 @@ class C (A,B):
 
 
 
-### 정적 메소드 : @classmethod와 @staticmethod
-
-- 클래스에서 직접 접근할 수 있는 메소드
-- 다른 언어들과 다르게 정적메소드 임에도, 인스턴스에서도 접근이 가능하다.
-
-
-
 ## 클래스 네임스페이스
 
 ```python
@@ -129,4 +150,73 @@ print (dir())
 
 **dir** 내장함수의 결과값에 `Stock`클래스가 들어있기 때문에 프롬포트에 `Stock`를 입력해도 오류가 발생하지 않는다.
 
-파이썬에서는 클래스가 정의되면, 하나의 독립적인 네임스페이스가 생성된다. 그리고 클래스 내에 정의된 변수나 메서드는 해당 
+파이썬에서는 클래스가 정의되면, 하나의 독립적인 네임스페이스가 생성된다.( 함수와 마찬가지 ) 그리고 클래스 내에 정의된 변수나 메서드는 해당 네임스페이스에 등록된다.
+
+
+
+## 메서드
+
+- 인스턴스 메서드
+
+  인스턴스 객체에 엑세스 할 수 있도록 메서드의 첫번째 파라미터에 항상 객체 자신을 의미하는 **self** 파라미터를 갖는다.
+
+- 정적 메서드 : @classmethod와 @staticmethod
+
+  - 클래스에서 직접 접근할 수 있는 메서드.
+
+  - 인스턴스를 만들지 않아도 실행 가능하다.
+
+  - 인스턴스에서도 접근이 가능하다.
+
+    - classmethod
+      - 첫번째 인자로 클래스를 입력한다.( 주로 cls )
+    - staticmethod
+      - 필수 인자없음.
+
+    ```python
+    >>> class calc:
+    	@staticmethod
+    	def add(n):
+    		return n+10
+    	@classmethod
+    	def min(cls,n):
+    		return n-10
+    
+    	
+    >>> calc.add(10)
+    20
+    >>> calc.min(10)
+    0
+    ```
+
+  - 클래스 변수에 접근할 때는 staticmethod보다는 classmethod가 좀 더 적절하다.
+
+    ```python
+    >>> class calc:
+    	name ="계산을 하자"
+    	
+    	@staticmethod
+    	def add(n):
+    		print(calc.name)
+    		return n+10
+    	@classmethod
+    	def min(cls,n):
+    		print(cls.name)
+    		return n-10
+    
+    	
+    >>> calc.add(10)
+    계산을 하자
+    20
+    >>> calc.min(10)
+    계산을 하자
+    0
+    ```
+
+    `cls.name`으로 클래스 변수에 접근하는 것이 좀더 좋아보인다.
+
+
+
+<https://wikidocs.net/21054>
+
+[http://pythonstudy.xyz/python/article/19-%ED%81%B4%EB%9E%98%EC%8A%A4](http://pythonstudy.xyz/python/article/19-클래스)
