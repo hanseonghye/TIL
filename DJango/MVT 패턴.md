@@ -14,6 +14,8 @@ mvc패턴에서 view->template, controller->view된 것.
 
   사용자에게 보여지는 UI부분
 
+라고 책에 나오는데 인터넷에 찾아보니 `Mode`에서 디비 역할뿐만 아니라 복잡한 로직까지 처리해 주는 것 같다. View는 사용자의 request를 받고 적절한 Model을 호출하며 Model이 주는 response를 알맞은 Template에 전달해 주는 역할을 하는듯 하당.
+
 
 
 ### MVT패턴에 따른 처리 과정

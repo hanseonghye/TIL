@@ -1,4 +1,8 @@
-# 2.4 개발 코딩하기-URLConf
+# 2. 실전 프로그래 개발 - Bookmark 개발
+
+
+
+## 2.4 개발 코딩하기-URLConf
 
 ```python
 # myjango/mysite/urls.py
@@ -17,7 +21,7 @@ urlpatterns = [
 
 
 
-# 2.5 개발 코딩하기 - 뷰
+## 2.5 개발 코딩하기 - 뷰
 
 URLconf에서 지정한 클래스형 뷰를 개발하자.
 
