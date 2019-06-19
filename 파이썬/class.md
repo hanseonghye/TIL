@@ -54,9 +54,27 @@
 
 ### `__del__`
 
-객체를 없애는 소면자. 호출 시, 메모리 공간에서 객체가 지워지게 된다.
+객체를 없애는 소멸자. 호출 시, 메모리 공간에서 객체가 지워지게 된다.
 
 프로그램이 종료되면 `__del__`함수가 호출된다.
+
+`del [객체]` 이렇게 사용하면 소멸자가 호출된다.
+
+
+
+```python
+class Point:
+    count_of_instance = 0
+
+    def __init__(self, x, y):
+        self.x, self.y = x, y
+        Point.count_of_instance += 1
+
+    def __del__(self):
+        Point.count_of_instance -= 1
+```
+
+
 
 ### `__caㅣl__`
 
@@ -83,7 +101,26 @@ class Flight:
 f = Flight() #new init
 ```
 
+## `__str__`
 
+print 로 객체를 출력할 때의 폼을 지정
+
+### `__repr__`
+
+`__str__`과 같은 목적. 그런데 '+ '를 통해 문자열을 합칠 수 없다.
+
+```python
+def __repr__(self): # 위처럼 + 를 사용하여 return 할 수 없다.
+    return "Point ({0}, {1})".format(self.x, self.y)
+
+def test_to_string():
+    p = Point()
+    print(repr(p)) # 이렇게 쓴다.
+```
+
+해보니까 repr도 str처럼 문자열을 합칠 수 있는데 알아보니 `__str__`은 비공식 적으로 개발자가 알아보기 쉽게 하기 위해 쓰는 것 같고 `__repr__`은 공식 적인 용도로 쓰는 것같다. 그래서 '+' 연산을 하지 말라는 거 인것 같다.
+
+보통 `__str__`는 `__repr__` 값을 가져와서 쓴다.
 
 
 
@@ -215,8 +252,27 @@ print (dir())
 
     `cls.name`으로 클래스 변수에 접근하는 것이 좀더 좋아보인다.
 
+### 클래스 멤버와 인스턴스 멤버
+
+```python
+class Point:
+    count_of_instance = 0 # 클래스 멤버 정의
+    
+    def set_x(self,x):
+        self.x = x # 인스턴스 멤버 정의
+```
+
+- 클래스 멤버는 모든 인스턴스 객체들에서 공유된다.
+- 인스턴스 멤버는 각각의 인스턴스 객체에서만 참조된다.
+- 클래스의 멤버에 접근할 때 먼저 인스턴스 멤버에서 찾으며, 없으면 클래스 멤버에서 찾게 된다.
+
 
 
 <https://wikidocs.net/21054>
 
 [http://pythonstudy.xyz/python/article/19-%ED%81%B4%EB%9E%98%EC%8A%A4](http://pythonstudy.xyz/python/article/19-클래스)
+
+
+
+
+

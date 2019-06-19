@@ -251,3 +251,48 @@ soup.select('p#i')
 soup.select('.d')
 ```
 
+
+
+-------------------
+
+## bit에서 배운것
+
+### request  와 response 받기
+
+```python
+url = ""
+request = Request(url)
+response = urlopen(request)
+```
+
+
+
+
+
+### tag로 접근
+
+```python
+bs = BeautifulSoup(html, 'html.parser')
+tag = bs.td
+```
+
+
+
+### attribute로 접근
+
+```python
+bs = BeautifulSoup(html, 'html.parser')
+    tag = bs.td
+    print(tag['class']) # 해당 값이 없으면 error, 종류에 따라 다른 타입의 결과를 보여줌.
+    print(tag.attrs)  # tag가 가진 모든 값을 조회
+```
+
+
+
+### attribute로 태그 조회
+
+```python
+bs = BeautifulSoup(html, 'html.parser')
+tag = bs.find(attrs={'class': 'title'})
+```
+
