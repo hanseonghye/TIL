@@ -27,6 +27,15 @@ render(request, template_name, context = None)
 return HttpResponseRedirect('/path')
 ```
 
+### 파라미터 값 가져오기
+
+```python
+request.GET["para1"]
+relquest.POST["para2"]
+
+request.get("para3",0) # default 값 지정
+```
+
 
 
 ### return json
