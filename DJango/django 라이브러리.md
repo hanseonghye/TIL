@@ -2,7 +2,7 @@
 
 
 
-## http
+## return
 
 ### HttpResponse
 
@@ -27,8 +27,6 @@ render(request, template_name, context = None)
 return HttpResponseRedirect('/path')
 ```
 
-
-
 ### return json
 
 ```python
@@ -41,6 +39,17 @@ return JsonResponse(jsonresult)
 
 
 
+
+## 파라미터 가져오기
+
+```python
+request.POST['val']
+```
+
+
+
+
+
 ## model - db 관련
 
 ### 모두 가져오기
@@ -50,5 +59,21 @@ return JsonResponse(jsonresult)
 data = Model.objects.all().order_by('-id')
 ```
 
+### filter
+
+```python
+Model.objects.filter(col1=val1, col2=val2)
+Model.objects.filter(col1=val1).filter(col2=val2)
+```
+
+### get
+
+`Model.objects.get(col1=val1)`
+
+get은 하나의 값을 가져오고 filter는 해당하는 모든 row를 가져온다.
 
 
+
+### F()
+
+`todo`
