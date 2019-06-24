@@ -8,7 +8,9 @@ HTML5, XHTML, HTML의 세가지 문서 유형이 존재. 유형에 따라 마크
 
 - 크로스 브라우징
 
-  웹 표준 기술을 적용하여 서로 다른 OS, 플랫폼에서도 구현되는 기술을 말한다. html5를 사용한다는 것을 알려주자!
+  웹 표준 기술을 적용하여 서로 다른 OS, 플랫폼에서도 구현되는 기술을 말한다.
+
+  웹 표준을 따름으로써 크로스 브라우징이 가능해 진다.
 
 - html5를 사용한다는 것을 알려주자
 
@@ -25,16 +27,40 @@ HTML5, XHTML, HTML의 세가지 문서 유형이 존재. 유형에 따라 마크
 
    한 줄을 통째로 차지
 
+   ```html
+   <p>
+       block1
+   </p>
+   <p>
+       block2
+   </p>
+   ```
+
+   
+
    - div --> but 설정(css)을 통해 Inline-block처럼 구현할 수 있다.
 
      ```html
      <div style="display:inline-block; width:50%; height:auto">
      </div>
      ```
+     
+     
 
 2. Inline
 
    내용물의 길이만큼 공간을 차지
+
+   ```html
+   <p>
+       <em>inline1</em>
+       <strong>inline2</strong>
+   </p>
+   ```
+
+   
+
+   빈 공간?은 항상 `스페이스` 간격 만큼이다. 더 많이 공간을 벌리고 싶다면 `&nbsp`를 쓰거나 `padding`을 주자.
 
    - span
 
@@ -83,3 +109,9 @@ https://www.zerocho.com/category/HTML&DOM/post/5821b15f577d375e5c73bbc5
 - `&lt;`  '&lt;'를 html에서 표현하는 방법
 - `&nbsp` '&nbsp;' 띄어쓰기
 - 등등~
+
+
+
+
+
+`https://validator.w3.org`에서 잘못된 부분이 없는지 확인 받을 수 있다. 
