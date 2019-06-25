@@ -2,8 +2,6 @@
 
 
 
-## return
-
 ### HttpResponse
 
 문자열을 화면에 출력시킬 수 있다.
@@ -27,8 +25,8 @@ render(request, template_name, context = None)
 return HttpResponseRedirect('/path')
 ```
 
-<<<<<<< HEAD
-=======
+
+
 ### 파라미터 값 가져오기
 
 ```python
@@ -38,9 +36,6 @@ relquest.POST["para2"]
 request.get("para3",0) # default 값 지정
 ```
 
-
-
->>>>>>> 8c9eed990c6542cd6536dbcc1c52601fa758f718
 ### return json
 
 ```python
