@@ -1,0 +1,25 @@
+# JQuery 기본 함수
+
+
+
+```javascript
+$(function(){
+    ...
+})
+```
+
+### event
+
+```javascript
+let btn = $('#btn')
+
+btn.on('click', function(){
+    
+})
+
+// 같은 행위
+btn.click(function(){
+    
+})
+```
+

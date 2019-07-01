@@ -22,6 +22,8 @@
 
 `$ git rm -r --cached . `
 
+
+
 ### push 되돌리기 , 복구
 
 `$ git reset --hard [push id]`
@@ -34,3 +36,32 @@
 
 다른방법이 있는지는 모르겠담..
 
+
+
+### 저장소에서 하위 dir만 clone하기
+
+1. clone할 dir 만들고 이동. init도 해준다.
+
+   `# git init`
+
+2. sparse Checkout 이 가능하도록 설정
+
+   `# git config core.sparseCheckout true`
+
+3. remote 추가
+
+   `# git remote add -f origin [url] `
+
+4. 가져오고 싶은 파일이나 dir만 `.git/info/sparse-checkout` 파일에 기술한다.
+
+   `# echo "python-crawler" >> .git/info/sparse-checkout`
+
+   나의 경우는 해당 저장소중 `python-crawler` dir만 가져오고 싶었다. 
+
+   sparse-checkout 파일이 없으면 생성해줘야 한다.
+
+5. pull!
+
+   `git pull origin master`
+
+<https://www.lesstif.com/pages/viewpage.action?pageId=20776761>
