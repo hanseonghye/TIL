@@ -119,6 +119,14 @@
 
 
 
+## httpd.conf 파일 분석
+
+### `<Directory>`
+
+`<Directory> ~ </Directory>` 는 지정한 디렉터리 이하의 모든 웹문서들에 대하여 어떤 서비스와 기능을 허용/거부 할 것인지를 설정한다.
+
+
+
 
 
 <https://victorydntmd.tistory.com/226?category=706521>

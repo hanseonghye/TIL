@@ -6,7 +6,7 @@
 
 - window.parseInt() 와 parseInt()는 같은 실행을 한다. window는 최상위 객체이기 때문 :exclamation:
 
-- 생성한 변수또한 window 객체안에 등록된다.
+- 전역에 생성한 변수또한 window 객체안에 등록된다.
 
   ```javascript
   let val = "window";
