@@ -92,3 +92,8 @@ But 같은 도메인에서는 가능하다.
 newWindow.close();
 ```
 
+
+
+### window.onload
+
+`DOM loading` 이 완료된 시점에 작동한다.
