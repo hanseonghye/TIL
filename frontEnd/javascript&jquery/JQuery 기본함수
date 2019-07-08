@@ -6,6 +6,10 @@
 $(function(){
     ...
 })
+
+jQuery(document).ready(function(){
+    ...
+})
 ```
 
 ### event

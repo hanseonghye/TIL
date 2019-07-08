@@ -97,3 +97,4 @@ newWindow.close();
 ### window.onload
 
 `DOM loading` 이 완료된 시점에 작동한다.
+
