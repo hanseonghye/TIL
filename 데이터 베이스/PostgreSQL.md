@@ -6,6 +6,16 @@
 
 
 
+### 실행 (centos7)
+
+`# systemctl start postgresql-9.6.service`
+
+
+
+### 쉘로 접속 (centos7)
+
+`sudo -i -u postgres psql`
+
 ### user 생성
 
 `=# create user [user] with password '[password]';`
@@ -27,6 +37,21 @@ USER 칸에 user 계정 적고 METHOD에 password[진짜 비밀번호가 아니�
 ![img](./img/img3.png)
 
 세번째 줄의 경우 192.168.1.* 으로 들어오는 모든 접속을 허용해 주는 말이다. [webdb로 접근시]
+
+
+
+### pg_hba.conf 파일을 못 찾겠을때
+
+1. 상위 권한으로 접속 : `sudo su - postgres`
+2. 여기서 찾으면 된다. 여기는 postgresql이 설치된 home경로 이다(?)
+
+
+
+### 그래도 connection refused 가 뜬다면
+
+![연결 거부](./img/img4.png)
+
+`data/postgresql.conf` 파일에 주석처리돼 있는, `listen_addresses`를 '*'로 모두 열어준다. 
 
 
 
