@@ -56,7 +56,19 @@ class ThumbnailImageField(ImageField):
         super(ThumbnailImageField, self).__init__(*args, **kwargs)
 
 ```
-
+- from PIL import Image
+  - 이미지 처리 라이브러리
+- def _add_thumb
+  - 기존 이미지 파일명을 기준으로 썸네일 이미지 파일명을 만들어 준다. abc.jpb --> abc.thumb.jpg
+- class ThumbnaiImageFieldFile(ImagefieldFile)
+  - 파일 시스템에 직접 파일을 쓰고 지우는 작업을 함.
+  - def __get_thumb_path(self)
+    - 이미지를 처리하는 필드는 파일의 경로(path)와 url 속성을 제공해야 한다. 이 함수는 원본 파일의 경로인 path 속성에 추가해 썸네일의 경로인 thumb_path 속성을 만들어 준다.
+  - def __get_thumb_url(self)
+    - 원본 파일의 URL인 url 속성에 추가해 썸네일의 URL인 thumb_url 속성을 만들어 준다.
+  - def save(self, name, content, save=True)
+    - 파일 시스템에 파일을 저장하고 생성하는 메소드
+    - 부모클래스의 save()메소드를 호출해서 원본 이미지를 저장한다.
 - ThumbnailImageField
   - ImageField를 상속받는다. 
   - FileField 클래스를 정의할 떄는 그에 상응하는 File 처리 클래스를 `attr_class`속성에 정의해야 한다.

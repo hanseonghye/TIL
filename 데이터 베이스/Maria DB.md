@@ -8,6 +8,8 @@
 
 
 
+### db 생성
+
 - create database [db]
 - use [db]
 

@@ -4,7 +4,7 @@
 
 `# pip install pytest`
 
-
+`# pip install pytest-django` <-- pytest 뿐만 아니라 django의 테스트 코드를 인식하는 플로그인도 설치
 
 ### 예제
 
