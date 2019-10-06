@@ -33,6 +33,28 @@
 
 db에는 다음과 같이 [어플리케이션 이름]-[model 이름]의 이름으로 테이블이 생성된다.
 
+
+
+### 마이그레이션 관련 명령어
+
+```txt
+# 마이그레이션 파일 생성 ( 앞에 python manage.py 포함해야함)
+$ makemigrations <app-name> 
+
+# 마이그레이션 적용
+$ migrate <app-name>
+
+# 마이그레이션 적용 현황
+$ showmigrations <app-name>
+
+# sql 내역
+sqlmigrate <app-name> <migration-name>
+```
+
+
+
+
+
 ### Admin 사이트에 테이블 반영
 
 ```python
@@ -48,3 +70,7 @@ admin.site.register(Bookmark,BookmarkAdmin)
 ```
 
 `BookmarkAdmin` class는 `Bookmark`class가 Admin사이트에서 어떤 모습으로 보여줄지를 정의하는 클래스 이다. Bookmark 내용을 보여줄 때, title과 url을 화면에 출력하라고 지정한다 그리고 `admin.site.register()`함수를 사용해 `Bookmark`와 `BookmarkAdmin`클래스를 등록한다.
+
+
+
+- <https://wayhome25.github.io/django/2017/03/20/django-ep6-migrations/>

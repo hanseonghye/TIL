@@ -301,3 +301,14 @@ select emp_no, avg(salary)
 	group by emp_no
 	having avg(salary) > 1000;
 ```
+
+
+
+
+
+## 윈도우에서 사용하기
+
+### 실행파일
+
+` C:\Program Files\PostgreSQL\10\scripts\runbsql.bat` 실행
+
