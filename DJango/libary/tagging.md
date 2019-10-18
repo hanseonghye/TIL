@@ -15,7 +15,7 @@ INSTALLED_APPS = [
 ]
 ```
 
-
+- model에 적용
 
 ```python
 from tagging.fields import TagField
