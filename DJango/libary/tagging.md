@@ -27,10 +27,3 @@ class Post(models.Model):
 
  ++ 마이그레이션 해주기
 
-
-
-
-
-django-tagging은 업데이트가 끊겼다고 한다.
-
-django-taggit을 사용하겠다~
