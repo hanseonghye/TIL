@@ -25,7 +25,7 @@ INSTALLED_APPS = [
 
 ```python
 # in settings.py
-CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
+CKEDITOR_BASEPATH = "/static/ckeditor/ckeditor/"
 ```
 
 
@@ -64,3 +64,17 @@ admin.site.register(Post, PostAdmin )
 
 ```
 
+
+
+
+
+### Cannot set property 'dir' of undefined
+
+그런데 저렇게 설정하고 admin 페이지로 가니 다음과 같은 에러가 났다. 구글링하니까 ckeditor관련 js파일이 있는 폴더를 못찾아서 그렇다고 한다. 즉 settings.py 에서 CKEDITOR_BASEPATH를 잘못했다는 말이다. 
+
+```python
+#CKEDITOR_BASEPATH = f'{STATIC_URL}/ckeditor/ckeditor/'
+CKEDITOR_BASEPATH = '/static/ckeditor/ckeditor/'
+```
+
+나의 경우 이렇게 바꿔주니 작동했다!
