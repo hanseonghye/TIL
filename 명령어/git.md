@@ -4,7 +4,9 @@
 ### remote
 `$ git remote add origin [url]`
 
+### remote 취소
 
+`$ git remote remove origin`
 
 ### git 최초 설정
 
