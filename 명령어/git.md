@@ -67,3 +67,12 @@
    `git pull origin master`
 
 <https://www.lesstif.com/pages/viewpage.action?pageId=20776761>
+
+
+
+
+
+## git ignore file 안 먹힐 때
+
+` >> git rm -r --cached .`
+
