@@ -1,7 +1,5 @@
 # ORDER BY
 
-- order by
-
 ```python
 Model.objects.order_by('colunm')
 ```

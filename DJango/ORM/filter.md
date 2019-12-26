@@ -1,12 +1,12 @@
 # filter
 
-## AND
+### AND
 
 ```python
 filter(A='', B='')
 ```
 
-## NOT
+### NOT
 
 ```python
 exclude(A='')

@@ -15,5 +15,3 @@ models.DateTimeField(auto_now_add=True)
 ```python
 models.DateTimeField(auto_now=True)
 ```
-
-### 
