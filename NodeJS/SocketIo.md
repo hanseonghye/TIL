@@ -1,4 +1,4 @@
-# # Soctet.io 
+## Soctet.io 
 
 NodeJS의 webscket 모듈인 socket.io 을 이용해서 채팅을 구현해 보자. 그 전에 간단하게 websocket에 대해 알아보자.
 

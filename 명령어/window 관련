@@ -1,0 +1,13 @@
+# window 명령어
+
+## port Kill
+
+1. port 번호에서 실행중인 PID확인하기
+
+   `netstat -a -o`
+
+2. kill
+
+   `taskkill /f /pid [pid]`
+
+   `/f` 옵션은 프로세스 강제종료를 의미 한다.
