@@ -4,7 +4,7 @@
 
 `$ groupadd [group name]`
 
-`$ useradd -M -g  계정명 그룹명 ` ?? 미확실 `todo`
+`$ useradd -M -g  계정명 그룹명 ` ?? 미확실
 
 
 
