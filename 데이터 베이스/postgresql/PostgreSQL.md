@@ -22,7 +22,7 @@
 
 ### 비밀번호 설정
 
-`=# alter user [user] with password [비밀번호];`
+`=# alter user [user] with password '[비밀번호]';`
 
 ![img](./img/img2.png)postgreSQL/data/pg_hba.conf 파일
 
