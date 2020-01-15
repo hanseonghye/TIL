@@ -1,0 +1,21 @@
+# postgresql10
+
+1. 레포 추가
+
+   `# rpm -Uvh https://yum.postgresql.org/10/redhat/rhel-7-x86_64/pgdg-centos10-10-2.noarch.rpm`
+
+2. install
+
+   `# yum install -y postgresql10-server postgresql10`
+
+3. db 초기화
+
+   `# /usr/pgsql-10/bin/postgresql-10-setup initdb`
+
+   
+
+
+
+
+
+- https://sysops.tistory.com/7

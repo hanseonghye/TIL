@@ -32,6 +32,12 @@ USER 칸에 user 계정 적고 METHOD에 password[진짜 비밀번호가 아니�
 
 
 
+## User 계정으로 접속 (centos7)
+
+`# psql -U [계정] -d [db]`
+
+
+
 ### 접속 권한 및 외부 접속
 
 ![img](./img/img3.png)
