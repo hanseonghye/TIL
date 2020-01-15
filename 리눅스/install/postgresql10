@@ -12,9 +12,9 @@
 
    `# /usr/pgsql-10/bin/postgresql-10-setup initdb`
 
-   
+4. 실행
 
-
+   `# systemctl start postgresql-10`
 
 
 
