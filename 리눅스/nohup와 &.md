@@ -1,4 +1,4 @@
-# nohub와 &
+# nohup 와 &
 
 ## &
 
@@ -10,8 +10,14 @@
 
 
 
-## nohub
+## nohup 
 
 **장고 백그라운드에서 실행 시키기**
 
 `# nohup python manage.py runserver &`
+
+**종료시키기**
+
+`#ps -ef | grep python`
+
+`#kill -9 PID번호`
