@@ -148,7 +148,7 @@ USER 칸에 user 계정 적고 METHOD에 password[진짜 비밀번호가 아니�
 
 ### 컬럼 삭제
 
-`# alter table [table] drop [column]`
+`# alter table [table] drop column [column]`
 
 ### 권한 주기
 
