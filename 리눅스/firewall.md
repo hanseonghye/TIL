@@ -4,6 +4,22 @@
 
 `$ firewall-cmd --state`
 
+이때 `is not running`이 뜬다면 firewall이 설치 되어있는지 확인하자.
+
+### 설치 확인
+
+`# yum list installed firewalld`
+
+### 설치
+
+`# yum install firewalld`
+
+### 실행
+
+`# systemctl start firewalld`
+
+
+
 ## 다시 로드
 
 `$ firewall-cmd --reload`
