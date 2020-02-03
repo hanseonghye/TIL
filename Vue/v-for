@@ -1,0 +1,79 @@
+# v-for
+
+> <Item>
+>
+> <Item> * 100 과 같은 컴포넌트를 만들고 싶을 때 사용할 수 있다
+
+
+
+```vue
+// bottom.vue
+
+<template>
+	<div>
+        <ul class="wrap">
+            <li class="item" v-for="(val, idx) in items" :key="{idx}">
+                <a :href="val.link"> 
+                    <img :src="val.img">
+                    <span>제목: {{val.name}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</template>
+
+
+<script>
+export default {
+    props: {
+        items: {type: Array(), default: () => []}
+    }
+};
+</script>
+```
+
+- 태그앞에 `:`가 붙으면 val 객체에 접근할 수 있게 된다.
+
+
+
+```vue
+// top.vue
+// 컴포넌트를 불러오고 items 태그를 통해 데이터를 넘겨준다.
+
+<template>
+	<div id="app">
+        <Bottom :items="items"/
+    </div>
+</template>
+
+
+<script>
+import Bottom from "./components/Bottom";
+    
+export default {
+    components: {
+        Bottom
+    },
+    data() {
+        return {
+            items : [
+                {
+                    name : "이름1",
+                    link : "naver.com",
+                    img : "1.png"
+                },
+                {
+                    name : "이름2",
+                    link : "google.com",
+                    img : "2.png"
+                }
+            ]
+        }
+    }
+}
+</script>
+
+
+<style></style>
+```
+
