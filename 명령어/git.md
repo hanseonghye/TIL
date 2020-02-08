@@ -76,3 +76,10 @@
 
 ` >> git rm -r --cached .`
 
+
+
+
+
+## 변경된 파일 pull 한 시점으로 되돌리기
+
+`# git checkout --파일명`
