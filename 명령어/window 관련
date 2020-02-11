@@ -11,3 +11,11 @@
    `taskkill /f /pid [pid]`
 
    `/f` 옵션은 프로세스 강제종료를 의미 한다.
+
+
+
+
+
+### grep
+
+`select-string`
