@@ -79,9 +79,9 @@ vi를 잠시 중단하고 지정한 명령 수행
 
 ### 줄 표시
 
-`: set no`
+`: set number`
 
-`: set nonu`
+`: set nu
 
 
 
