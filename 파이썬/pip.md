@@ -1,4 +1,4 @@
-# 설치 모듈 확인 
+# pip
 
 ### pip list
 
@@ -9,6 +9,12 @@
 ### pip freeze
 
 - 버전 까지 확인
+
+
+
+### pip install 모듈 --upgrade
+
+- downgrade할때도 upgrade를 사용한다. 안전하게 하고싶으면 해당 모듈을 삭제하고 install 한다.
 
 
 

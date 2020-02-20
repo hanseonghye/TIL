@@ -31,7 +31,7 @@ return HttpResponseRedirect('/path')
 
 ```python
 request.GET["para1"]
-relquest.POST["para2"]
+request.POST["para2"]
 
 request.get("para3",0) # default 값 지정
 ```
@@ -45,17 +45,6 @@ jsonresult = {
     }
 return JsonResponse(jsonresult)
 ```
-
-
-
-
-## 파라미터 가져오기
-
-```python
-request.POST['val']
-```
-
-
 
 
 
