@@ -1,5 +1,7 @@
 # window 명령어
 
+## powershell
+
 ## port Kill
 
 1. port 번호에서 실행중인 PID확인하기
@@ -11,11 +13,17 @@
    `taskkill /f /pid [pid]`
 
    `/f` 옵션은 프로세스 강제종료를 의미 한다.
-
-
-
-
+   
+   
 
 ### grep
 
 `select-string`
+
+
+
+
+
+### 숨김 파일 보기
+
+`ls -at h`

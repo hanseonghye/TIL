@@ -1,18 +1,30 @@
 # Git 명령어
 
-
-### remote
-`$ git remote add origin [url]`
-
-### remote 취소
-
-`$ git remote remove origin`
-
 ### git 최초 설정
 
 `$ git config --global user.name "[name]"`
 
 ` $ git config --golbal user.email [email] `
+
+
+
+
+
+## remote 
+
+### remote 등록
+
+`$ git remote add origin [url]`
+
+### remote 삭제
+
+`$ git remote remove origin`
+
+### remote 확인
+
+`$  git remove -v`
+
+
 
 
 
@@ -83,3 +95,15 @@
 ## 변경된 파일 pull 한 시점으로 되돌리기
 
 `# git checkout --파일명`
+
+
+
+
+
+## add
+
+### add 취소
+
+`git reset`
+
+`git reset 파일명`

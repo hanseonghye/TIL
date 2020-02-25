@@ -30,10 +30,10 @@ npm uninstall 모듈
 
 
 
-#### save
+#### ~~save 자동으로 되는듯~~
 
 ````
-npm install --save 모듈  --> package.json 파일에 추가
+npm install --save 모듈  --> package.json 파일에 추가 // 
 npm uninstall --save 모듈
 ````
 
