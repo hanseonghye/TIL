@@ -34,6 +34,8 @@
 
 
 
-### 줄이동
+### new line 추가
 
-`alt + 방향키`
+### 위에 줄추가
+
+`shift + ctrl + enter`
