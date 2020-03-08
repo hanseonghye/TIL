@@ -10,7 +10,7 @@
 <select name='select'>
     {% for o in objects %}
     	<option value='{{ o.id }}'>{{ o.name }}</option>
-    {% ndfor %}
+    {% endfor %}
 </select>
 ```
 

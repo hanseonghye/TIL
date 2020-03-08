@@ -6,6 +6,14 @@
 filter(A='', B='')
 ```
 
+### OR
+
+```python
+filter(Q(category=self.kwargs['pk'] )| Q( category__parent = self.kwargs['pk']), use_tf=True)
+```
+
+
+
 ### NOT
 
 ```python

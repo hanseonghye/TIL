@@ -2,6 +2,14 @@
 
 
 
+### 중복 제거
+
+```python
+Objects.objects.filter(...).distinct("pk")
+```
+
+
+
 ## 중복 check
 
 ```python
