@@ -10,3 +10,8 @@
 
 `alt + enter`
 
+
+
+### Go to line
+
+`ctrl + g`
