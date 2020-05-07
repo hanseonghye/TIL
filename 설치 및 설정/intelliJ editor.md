@@ -15,3 +15,11 @@
 ### Go to line
 
 `ctrl + g`
+
+
+
+
+
+### new window 에서 파일 다시 열기
+
+`shift + f4`
