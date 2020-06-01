@@ -12,6 +12,7 @@ $('#two').css('color', '#0f0')
 //3. class 선택자
 $('.red').css('color', '#f00')
 $('.blue').css('color', '#00f')
+$('.a.b.c').css('color', '#00f') // class="a b c" 인 경우
 
 //4. 자식
 $('div > ul > li').css('font-weight', 'bold')
