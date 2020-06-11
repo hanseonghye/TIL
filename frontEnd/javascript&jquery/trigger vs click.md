@@ -1,4 +1,4 @@
-# trigger('click') vs click
+e# trigger('click') vs click
 
 jquery 에서 `click` 함수는 다음과 같다.
 
