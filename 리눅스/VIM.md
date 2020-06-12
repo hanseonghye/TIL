@@ -87,7 +87,7 @@ vi를 잠시 중단하고 지정한 명령 수행
 
 `: set number`
 
-`: set nu
+`: set nu`
 
 
 
