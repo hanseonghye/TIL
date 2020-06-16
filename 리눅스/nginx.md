@@ -3,9 +3,9 @@
 - 설치
   - `$ sudo yum install nginx`
 - nginx  시작
-  - `$ sudo sysctmctl start nginx`
+  - `$ sudo systemctl start nginx`
 - 상태 확인
-  - `$ sudo sysctmctl status nginx`
+  - `$ sudo systemctl status nginx`
   - ` Started nginx - high performance web server.` 가 뜨면 잘 실행 된것.
 
 
