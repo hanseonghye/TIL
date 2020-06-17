@@ -107,3 +107,11 @@
 `git reset`
 
 `git reset 파일명`
+
+
+
+
+
+## 한글 깨짐 해결
+
+`git config --global core.quotepath false`
