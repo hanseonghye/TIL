@@ -115,3 +115,12 @@
 ## 한글 깨짐 해결
 
 `git config --global core.quotepath false`
+
+
+## show
+### commit 내역 자세히 확인
+`git show`
+
+
+### 파일 확인
+`git show --name-only`
