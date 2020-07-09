@@ -318,3 +318,12 @@ select emp_no, avg(salary)
 
 ` C:\Program Files\PostgreSQL\10\scripts\runbsql.bat` 실행
 
+
+
+
+
+## drop all table
+
+`drop schema public cascade;`
+
+`create schema public`
