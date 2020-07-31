@@ -22,3 +22,8 @@
 
 `# pip freeze > requirements.txt`
 
+
+
+### pip proxy ssl 문제 해결
+
+`pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r requirements.txt`
