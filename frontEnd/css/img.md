@@ -7,3 +7,11 @@
 <img src=" " style="width:100%; height:auto;">
 ```
 
+
+
+#### 타원형으로 만들기
+
+```css
+border-radius: 50%
+```
+
