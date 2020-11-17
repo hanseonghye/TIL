@@ -3,12 +3,10 @@
 ## data class
 
 - 소괄호 2쌍으로`(())` 열고 닫는다.
-
 - 변수나 상수만 선언할 수 있다.
-
 - 초기화는 해도되고 안해도 된다
-
 - 생성과 동시에 생성자가 만들어 진다.
+- getter(), setter(), toString() 등의 메서드가 자동으로 생성된다.
 
 
 ```kotlin
@@ -62,8 +60,11 @@ fun main() {
 
 
 
+### companion object
 
+클래스 내부에 객체를 선언할때 사용
 
 
 
 - https://medium.com/@sket8993/kotlin-%EB%8B%A4%EC%96%91%ED%95%9C-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%B4%88%EA%B0%84%EB%8B%A8-%EC%9D%B4%ED%95%B4%ED%95%98%EA%B8%B0-38416cd8d63d
+
