@@ -1,5 +1,35 @@
 # class
 
+## class
+
+```kotlin
+class WhoAmI(private val name:String) {
+    fun myNameIs() = "나의 이름은 ${name}입니다"
+}
+
+
+class WhoAmI2{
+    private val name: String
+    constructor(name:String) {
+        this.name = name
+    }
+    
+    
+    fun myNameIs() = "나의 이름은 ${name}입니다"
+}
+
+
+
+fun main(args: Array<String>) {
+    val m1 = WhoAmI("영수")
+    println(m1.myNameIs())
+}
+```
+
+- https://www.bsidesoft.com/8187
+
+
+
 ## data class
 
 - 소괄호 2쌍으로`(())` 열고 닫는다.
