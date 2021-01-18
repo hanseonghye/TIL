@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2e17984b-e70c-466b-b797-1dc0fc315c0c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DJango/시작하기.md" beforeDir="false" afterPath="$PROJECT_DIR$/DJango/시작하기.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/css/img.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/css/img.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/css/선택자.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/css/선택자.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/javascript&amp;jquery/AJAX.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/javascript&amp;jquery/AJAX.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontEnd/javascript&amp;jquery/trigger vs click.md" beforeDir="false" afterPath="$PROJECT_DIR$/frontEnd/javascript&amp;jquery/trigger vs click.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/데이터 베이스/postgresql/PostgreSQL.md" beforeDir="false" afterPath="$PROJECT_DIR$/데이터 베이스/postgresql/PostgreSQL.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/데이터 베이스/postgresql/권한 관련.md" beforeDir="false" afterPath="$PROJECT_DIR$/데이터 베이스/postgresql/권한 관련.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/리눅스/VIM.md" beforeDir="false" afterPath="$PROJECT_DIR$/리눅스/VIM.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/리눅스/apache.md" beforeDir="false" afterPath="$PROJECT_DIR$/리눅스/apache.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/리눅스/명령어.md" beforeDir="false" afterPath="$PROJECT_DIR$/리눅스/명령어.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/명령어/git.md" beforeDir="false" afterPath="$PROJECT_DIR$/명령어/git.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/용어/HTTP.md" beforeDir="false" afterPath="$PROJECT_DIR$/용어/HTTP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/파이썬/pip.md" beforeDir="false" afterPath="$PROJECT_DIR$/파이썬/pip.md" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1djBId4ZV7X0f4pL3NLGLAfOCqH" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.deploy.options" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\7040_64bit\Desktop\pro\TIL\WEB" />
+      <recent name="C:\Users\7040_64bit\Desktop\pro\TIL\react\Event Hook" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2e17984b-e70c-466b-b797-1dc0fc315c0c" name="Default Changelist" comment="" />
+      <created>1592928542152</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592928542152</updated>
+      <workItem from="1592928544082" duration="1361000" />
+      <workItem from="1592994173639" duration="110000" />
+      <workItem from="1593074334253" duration="47000" />
+      <workItem from="1593075581891" duration="1458000" />
+      <workItem from="1593510530575" duration="625000" />
+      <workItem from="1593593767673" duration="124000" />
+      <workItem from="1593594719630" duration="18000" />
+      <workItem from="1593755141098" duration="39000" />
+      <workItem from="1594034135443" duration="1238000" />
+      <workItem from="1594090256088" duration="10362000" />
+      <workItem from="1594168418487" duration="808000" />
+      <workItem from="1594169812688" duration="41000" />
+      <workItem from="1594284930987" duration="901000" />
+      <workItem from="1595236517570" duration="1062000" />
+      <workItem from="1595312636031" duration="53000" />
+      <workItem from="1595496179217" duration="31000" />
+      <workItem from="1596026417989" duration="758000" />
+      <workItem from="1596097936040" duration="24000" />
+      <workItem from="1596188523168" duration="851000" />
+      <workItem from="1596442386749" duration="36000" />
+      <workItem from="1596616903666" duration="329000" />
+      <workItem from="1596702136774" duration="87000" />
+      <workItem from="1596781405692" duration="22000" />
+      <workItem from="1597044289724" duration="676000" />
+      <workItem from="1597125608243" duration="1045000" />
+      <workItem from="1597129653275" duration="4000" />
+      <workItem from="1597298780826" duration="83000" />
+      <workItem from="1597396241008" duration="17000" />
+      <workItem from="1597710682902" duration="613000" />
+      <workItem from="1598006264901" duration="89000" />
+      <workItem from="1598443641625" duration="58000" />
+      <workItem from="1598443725465" duration="75000" />
+      <workItem from="1599732959960" duration="637000" />
+      <workItem from="1600824884531" duration="84000" />
+      <workItem from="1603463644067" duration="642000" />
+      <workItem from="1603693647041" duration="34000" />
+      <workItem from="1604297609576" duration="148000" />
+      <workItem from="1604909986257" duration="1800000" />
+      <workItem from="1605621813021" duration="611000" />
+      <workItem from="1606204830996" duration="24000" />
+      <workItem from="1606838183509" duration="98000" />
+      <workItem from="1606920894771" duration="633000" />
+      <workItem from="1606985223328" duration="47000" />
+      <workItem from="1608096700493" duration="464000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+    <option name="exactExcludedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/../admin/node_modules/wait-for-expect/lib/toBeInRangeMatcher.d.js" />
+        <option value="$PROJECT_DIR$/../admin/node_modules/wait-for-expect/lib/waitForExpect.spec.d.js" />
+        <option value="$PROJECT_DIR$/../admin/node_modules/wait-for-expect/lib/index.d.js" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
