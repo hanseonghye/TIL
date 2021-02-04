@@ -30,7 +30,9 @@ https://bcho.tistory.com/934
 
 ## View
 
-`select 되는 부분들의 모음 같은건가???`
+원본 데이터로부터 필터링을 통하여, 원하는 형태의 데이터로 변환하여 보여준다. 읽기 전용 테이블과 유사 !
+
+자바스크립트로된 `map&reduce`함수를 통해서 데이터를 정재한 뒤, 뷰로 만든다.
 
 view를 이용해서 `rdbms`에서 제공되는, `indexing`, `grouping`, `sorting`등을 가능하게 한다
 
