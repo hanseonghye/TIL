@@ -176,6 +176,18 @@ create sequence seq_author start 1;
 insert into author values( nextval('seq_author'), '맹자');
 ```
 
+### primary key 추가하기
+
+```sql
+alter table [table] add primary key [column]
+```
+
+
+
+
+
+
+
 
 
 ```sql
