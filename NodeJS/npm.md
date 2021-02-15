@@ -45,6 +45,6 @@ git 프로젝트를 클론
 
 다른 remote 저장소의 정보는 가져오지 않는다.
 
-`npm degit [클론받을 url] [다운받을 dir]`
+`npx degit [클론받을 url] [다운받을 dir]`
 
 https://stove99.github.io/etc/2019/08/20/degit-project-template/
