@@ -25,9 +25,8 @@ $ npm run dev
 - 코드 스필릿
 - 페이지를 기반으로 간단한 클라이언트 사이드 라우팅
   - next는 기본적으로 SSR을 제공하는데, 추가적으로 간단하게 CSR을 적용할 수도 있다.
+  - 첫 페이지는 백엔드 서버에서 렌더링한다. 그 다음 부턴 csr을 적용하여 필요한 데이터 부분만 갱신한다.
 - Hot Module Replacement
-
-
 
 
 
@@ -52,5 +51,5 @@ https://jcon.tistory.com/124
 
 https://blueshw.github.io/2018/04/15/why-nextjs/
 
-
+https://www.sarah-note.com/%ED%81%B4%EB%A1%A0%EC%BD%94%EB%94%A9/posting2/
 
