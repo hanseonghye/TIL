@@ -186,10 +186,6 @@ alter table [table] add primary key [column]
 
 
 
-
-
-
-
 ```sql
 create table t1(
 	c1 serial
