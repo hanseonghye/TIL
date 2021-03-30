@@ -1,0 +1,39 @@
+# DateTime
+
+### set
+
+```php
+$dt1 = new DateTime();
+
+$dt2 = new DateTime("2018-07-04T11:21:35+09:00");
+
+$dt3 = new DateTime('-1 day');
+```
+
+
+
+### N day ago
+
+```php
+
+```
+
+
+
+### format
+
+`string`으로 반환
+
+```php
+$set_dateTime = new DateTime("2018-07-04T11:21:35+09:00");
+$set_dateTime = $set_dateTime->format('Y-m-d H:i:s');
+```
+
+
+
+### timezone
+
+```php
+new DateTime("now", new DateTimeZone('Asia/Taipei'));
+```
+
