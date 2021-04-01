@@ -12,14 +12,6 @@ $dt3 = new DateTime('-1 day');
 
 
 
-### N day ago
-
-```php
-
-```
-
-
-
 ### format
 
 `string`으로 반환
