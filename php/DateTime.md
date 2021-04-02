@@ -29,3 +29,15 @@ $set_dateTime = $set_dateTime->format('Y-m-d H:i:s');
 new DateTime("now", new DateTimeZone('Asia/Taipei'));
 ```
 
+
+
+#### convert timezone
+
+```php
+$time = "2018-07-04T11:21:35+10:00";
+$dt = new DateTime($time);
+$dt->setTimezone(new DateTimeZone('Asia/Taipei'));
+echo ($dt->format('Y-m-d H:i:s'));
+// 2018-07-04 09:21:35
+```
+
