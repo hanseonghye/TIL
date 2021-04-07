@@ -1,6 +1,6 @@
 # DateTime
 
-### set
+## set
 
 ```php
 $dt1 = new DateTime();
@@ -12,7 +12,7 @@ $dt3 = new DateTime('-1 day');
 
 
 
-### format
+## format
 
 `string`으로 반환
 
@@ -23,7 +23,7 @@ $set_dateTime = $set_dateTime->format('Y-m-d H:i:s');
 
 
 
-### timezone
+## timezone
 
 ```php
 new DateTime("now", new DateTimeZone('Asia/Taipei'));
@@ -31,7 +31,7 @@ new DateTime("now", new DateTimeZone('Asia/Taipei'));
 
 
 
-#### convert timezone
+### convert timezone
 
 ```php
 $time = "2018-07-04T11:21:35+10:00";
