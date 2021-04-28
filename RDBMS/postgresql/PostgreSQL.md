@@ -168,6 +168,7 @@ sql에서 `auto_increment` 같은 역할을 `sequence`를 통해 구현할 수 �
 
 ```sql
 create sequence seq_author start 1; 
+ALTER SEQUENCE seq_author RESTART WITH 1;
 ```
 
 - seq 사용해서 insert
