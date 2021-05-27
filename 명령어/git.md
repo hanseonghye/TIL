@@ -22,7 +22,7 @@
 
 ### remote 확인
 
-`$  git remove -v`
+`$  git remote -v`
 
 
 
