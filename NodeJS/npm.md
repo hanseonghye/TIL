@@ -48,3 +48,11 @@ git 프로젝트를 클론
 `npx degit [클론받을 url] [다운받을 dir]`
 
 https://stove99.github.io/etc/2019/08/20/degit-project-template/
+
+
+
+
+
+### 개발용으로만 설치
+
+`npm install --save-dev 모듈`
