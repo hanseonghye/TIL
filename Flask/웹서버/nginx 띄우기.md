@@ -14,7 +14,7 @@
 
 [uwsgi]
 master = true
-vitualenv = /home/프로젝트경로~~/venv
+virtualenv = /home/프로젝트경로~~/venv
 chdir = /home/프로젝트경로~~
 http-socket = :포트
 chmod-socket = 666
