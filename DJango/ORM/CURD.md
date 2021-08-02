@@ -1,5 +1,19 @@
 # CURD
 
+
+
+## SELECT
+
+### in
+
+```python
+Entry.objects.filter(headline__in='abc')
+```
+
+
+
+
+
 ## Insert
 
 ### save()
