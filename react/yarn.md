@@ -12,3 +12,10 @@
 
 `$ yarn remove 모듈명`
 
+
+
+
+
+## upgrade/downgrade module
+
+`$yarn upgrade 모듈명@버전`
